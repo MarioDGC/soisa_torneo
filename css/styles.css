@@ -1,0 +1,67 @@
+* {
+    font-size: .9rem;
+}
+
+
+.body-1 {
+    background-image: url("../assets/img/bg-10.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* deja fijo el fondo */
+    background-position: center;
+    /* posiciona la imagen al centro de la ventana */
+    background-size: cover;
+    /* ocupa toda la ventana */
+}
+
+.body-2 {
+    background-image: url("../assets/img/bg-8.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* deja fijo el fondo */
+    background-position: center;
+    /* posiciona la imagen al centro de la ventana */
+    background-size: cover;
+    /* ocupa toda la ventana */
+}
+
+.categoria {
+    background: linear-gradient(rgba(255, 255, 255, 0.75),
+            rgba(255, 255, 255, 0.75));
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+}
+
+.equipos-enfrentamientos {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.marcador {
+    font-size: 6rem;
+    font-weight: 600;
+}
+
+.sumar-restar {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.juego-rolado {
+    background: rgba(255, 208, 0, 0.75);
+    color: rgb(255, 255, 255);
+}
+
+#body_rolados {
+    /* background-image: url("../assets/img/bg-estadio2.jpeg"); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)), url("../assets/img/bg-estadio2.jpeg");
+    background-repeat: no-repeat;
+    /* deja fijo el fondo */
+    background-position: center;
+    /* posiciona la imagen al centro de la ventana */
+}
+
+.tiempo-equipo {
+    font-size: 1.5rem;
+    /*font-weight: 600;*/
+}
