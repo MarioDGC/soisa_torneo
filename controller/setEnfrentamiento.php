@@ -86,8 +86,8 @@
         sets_enfrentamiento → si es = 2 sumar 3 puntos en la tabla al ganador, si fue en 3 sets sumar 2 puntos solamente
         array_equipoIzq y arr_equipoDer que contiene el json
 
-        Obtener de obj_equipoIzq el idEquipoIzq y comprobar en bdd en la tbl de enfrentamiento si la columna de 
-        
+        Obtener de obj_equipoIzq el idEquipoIzq y comprobar en bdd en la tbl de enfrentamiento si la columna de
+
         accion: 'terminar',
         id_ganador: id_ganador,
         sets_enfrentamiento: sets_enfrentamiento,
@@ -95,17 +95,30 @@
         obj_equipoIzq: obj_equipoIzq,
         obj_equipoDer: obj_equipoDer,
         */
-        $idEquipo1 = $_POST['idEquipo1'];
-        $idEquipo2 = $_POST['idEquipo2'];
 
-        $insEnfrentamiento = "INSERT INTO enfrentamiento(id_equipo_1,id_equipo_2) VALUES($idEquipo1,$idEquipo2)";
+        $id_ganador = $_POST['id_ganador'];
+        $sets_enfrentamiento = $_POST['sets_enfrentamiento'];
+        $idEnfrentamiento = $_POST['idEnfrentamiento'];
+        $obj_equipoIzq = json_decode($_POST['obj_equipoIzq']);
+        $obj_equipoDer = json_decode($_POST['obj_equipoDer']);
 
-        if (!mysqli_query($cnx, $insEnfrentamiento)) {
-            $data['result'] = 'err: '.$cnx->error;
-            console.log(__LINE__.'::'.$cnx->error);
+        $idEquipoIzq = $obj_equipoIzq['idEquipoIzq'];
+        $sql1Equipo1 = "SELECT id_equipo_1 FROM enfrentamiento WHERE id_enfrentamiento = $idEnfrentamiento";
+        $query1Equipo1 = mysqli_query($lectura, $sql1Equipo1);
+        $rows1Equipo1 = mysqli_num_rows($query1Equipo1);
+
+        if ($rows1Equipo1 > 0) {
+
+            $obj_equipo1 = $obj_equipoIzq;
+            $obj_equipo2 = $obj_equipoDer;
+
         } else {
-            $data['result'] = 'ok';
+            $obj_equipo1 = $obj_equipoDer;
+            $obj_equipo2 = $obj_equipoIzq;
         }
+
+        print_r($obj_equipo1);
+        print_r($obj_equipo2);
 
         return $data;
 
