@@ -157,6 +157,14 @@ $(document).ready(function () {
             document.querySelector('#saqueEquipoDer').setAttribute('data-saqueequipoder', 'false');
         }
 
+        if (puntosEquipoIzq >= 25 && (puntosEquipoIzq - puntosEquipoDer) >= 2) {
+            if (set3 === false) {
+                if (setGanadoIzq < 2) {
+                    $('#divIrSet3').removeClass('d-none');
+                }
+            }
+        }
+
         if (set3) {
             if (segundo_tiempo_set3 === false) {
                 if (puntosEquipoIzq == 8) {
@@ -187,6 +195,14 @@ $(document).ready(function () {
             }
             document.querySelector('#saqueEquipoDer').setAttribute('data-saqueequipoder', 'true');
             document.querySelector('#saqueEquipoIzq').setAttribute('data-saqueequipoizq', 'false');
+        }
+
+        if (puntosEquipoDer >= 25 && (puntosEquipoDer - puntosEquipoIzq) >= 2) {
+            if (set3 === false) {
+                if (setGanadoDer < 2) {
+                    $('#divIrSet3').removeClass('d-none');
+                }
+            }
         }
 
         if (set3) {
@@ -454,7 +470,7 @@ $(document).ready(function () {
         set2 = true;
 
         $('#divSet2').addClass('d-none');
-        $('#divSet3').removeClass('d-none');
+        $('#divFinalizar').removeClass('d-none');
 
         $("#spnTiempo1Der").addClass("text-success");
         $("#spnTiempo1Der").removeClass("text-danger");
@@ -529,7 +545,7 @@ $(document).ready(function () {
             sets_ganadoDer = +$('#setGanadoDer').text() + 1;
             $('#setGanadoDer').text(sets_ganadoDer);
         }
-        
+
         let id_ganador = sets_ganadoIzq > sets_ganadoDer ? idEquipoIzq : idEquipoDer;
 
         $('#resultSet3EquipoIzq').text(puntosEquipoIzq);
@@ -549,6 +565,8 @@ $(document).ready(function () {
             resultSet2EquipoDer: $('#resultSet2EquipoDer').text(),
             resultSet3EquipoDer: $('#resultSet3EquipoDer').text(),
         };
+
+        console.log(idEnfrentamiento + " ... " + id_ganador);
 
         $.ajax({
             type: 'post',
