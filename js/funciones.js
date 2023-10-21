@@ -16,6 +16,8 @@ $(document).ready(function () {
 
     let puntosEquipoIzq = 0;
     let puntosEquipoDer = 0;
+    let puntosTotalesEquipoIzq = 0;
+    let puntosTotalesEquipoDer = 0;
 
     let obj_equipoIzq = {};
     let obj_equipoDer = {};
@@ -149,7 +151,7 @@ $(document).ready(function () {
         tiene_el_saqueIzq = document.querySelector('#saqueEquipoIzq').getAttribute('data-saqueequipoizq');
 
         if (tiene_el_saqueIzq === "false") {
-            document.querySelector('#saqueEquipoIzq').innerHTML = '<img src="assets/icon/volleyball_ico.png" height="16px" alt="balon"> ';
+            document.querySelector('#saqueEquipoIzq').innerHTML = '<img src="assets/icon/volleyball_1.png" height="16px" alt="balon"> ';
             if (document.querySelector('#saqueEquipoDer').childNodes.length > 0) {
                 document.querySelector('#saqueEquipoDer').childNodes[0].remove();
             }
@@ -158,9 +160,20 @@ $(document).ready(function () {
         }
 
         if (puntosEquipoIzq >= 25 && (puntosEquipoIzq - puntosEquipoDer) >= 2) {
-            if (set3 === false) {
-                if (setGanadoIzq < 2) {
+
+            if (set1 === true && set2 === false) {
+                alert('Final de Set 1');
+                puntosTotalesEquipoIzq = puntosEquipoIzq;
+                puntosTotalesEquipoDer = puntosEquipoDer;
+                $('#divSet2').removeClass('d-none');
+            } else if (set3 === false) {
+                alert('Final de Set 2');
+                puntosTotalesEquipoIzq = puntosEquipoIzq;
+                puntosTotalesEquipoDer = puntosEquipoDer;
+                if (sets_ganadoIzq < 2) {
                     $('#divIrSet3').removeClass('d-none');
+                } else {
+                    $('#divFinalizar').removeClass('d-none');
                 }
             }
         }
@@ -170,6 +183,13 @@ $(document).ready(function () {
                 if (puntosEquipoIzq == 8) {
                     $('#cambiar_lados').click();
                     alert('Mitad de set 3. Cambio de cancha');
+                }
+
+                if (puntosEquipoIzq >= 15 && (puntosEquipoIzq - puntosEquipoDer) >= 2) {
+                    alert('Final de Set 3. Juego finalizado');
+                    puntosTotalesEquipoIzq = puntosEquipoIzq;
+                    puntosTotalesEquipoDer = puntosEquipoDer;
+                    $('#divFinalizar').removeClass('d-none');
                 }
             }
         }
@@ -189,7 +209,7 @@ $(document).ready(function () {
         tiene_el_saqueDer = document.querySelector('#saqueEquipoDer').getAttribute('data-saqueequipoder');
 
         if (tiene_el_saqueDer === "false") {
-            document.querySelector('#saqueEquipoDer').innerHTML = '<img src="assets/icon/volleyball_ico.png" height="16px" alt="balon"> ';
+            document.querySelector('#saqueEquipoDer').innerHTML = '<img src="assets/icon/volleyball_1.png" height="16px" alt="balon"> ';
             if (document.querySelector('#saqueEquipoIzq').childNodes.length > 0) {
                 document.querySelector('#saqueEquipoIzq').childNodes[0].remove();
             }
@@ -197,10 +217,18 @@ $(document).ready(function () {
             document.querySelector('#saqueEquipoIzq').setAttribute('data-saqueequipoizq', 'false');
         }
 
+
         if (puntosEquipoDer >= 25 && (puntosEquipoDer - puntosEquipoIzq) >= 2) {
-            if (set3 === false) {
-                if (setGanadoDer < 2) {
+
+            if (set1 === true && set2 === false) {
+                alert('Final de Set 1');
+                $('#divSet2').removeClass('d-none');
+            } else if (set3 === false) {
+                alert('Final de Set 2');
+                if (sets_ganadoDer < 2) {
                     $('#divIrSet3').removeClass('d-none');
+                } else {
+                    $('#divFinalizar').removeClass('d-none');
                 }
             }
         }
@@ -211,6 +239,11 @@ $(document).ready(function () {
                     $('#cambiar_lados').click();
                     alert('Mitad de set 3. Cambio de cancha');
                 }
+            }
+
+            if (puntosEquipoDer >= 15 && (puntosEquipoDer - puntosEquipoIzq) >= 2) {
+                alert('Final de Set 3. Juego finalizado');
+                $('#divFinalizar').removeClass('d-none');
             }
         }
     });
@@ -253,6 +286,13 @@ $(document).ready(function () {
         $('#puntosEquipoDer').text(puntosEquipoDer);
 
 
+        let puntosTotalesEquipoIzq_temp = puntosTotalesEquipoDer;
+        let puntosTotalesEquipoDer_temp = puntosTotalesEquipoIzq;
+        puntosTotalesEquipoIzq += puntosTotalesEquipoIzq_temp;
+        puntosTotalesEquipoDer += puntosTotalesEquipoDer_temp;
+
+
+
         // sets ganados
         let sets_ganados_equipo_izq_temp = $('#setGanadoIzq').text();
         let sets_ganados_equipo_der_temp = $('#setGanadoDer').text();
@@ -263,11 +303,11 @@ $(document).ready(function () {
         // lado del SAQUE
         if (document.querySelector('#saqueEquipoIzq').childNodes.length > 0) {
             document.querySelector('#saqueEquipoIzq').childNodes[0].remove();
-            document.querySelector('#saqueEquipoDer').innerHTML = '<img src="assets/icon/volleyball_ico.png" height = "16px" alt = "balon"> ';
+            document.querySelector('#saqueEquipoDer').innerHTML = '<img src="assets/icon/volleyball_1.png" height = "16px" alt = "balon"> ';
         }
         if (document.querySelector('#saqueEquipoDer').childNodes.length > 0) {
             document.querySelector('#saqueEquipoDer').childNodes[0].remove();
-            document.querySelector('#saqueEquipoIzq').innerHTML = '<img src="assets/icon/volleyball_ico.png" height = "16px" alt = "balon"> ';
+            document.querySelector('#saqueEquipoIzq').innerHTML = '<img src="assets/icon/volleyball_1.png" height = "16px" alt = "balon"> ';
         }
 
 
@@ -282,7 +322,7 @@ $(document).ready(function () {
         //     }
         //     document.querySelector('#saqueEquipoDer').setAttribute('data-saqueequipoder', 'false');
         //     document.querySelector('#saqueEquipoIzq').setAttribute('data-saqueequipoizq', 'true');
-        //     document.querySelector('#saqueEquipoIzq').innerHTML = '<img src="assets/icon/volleyball_ico.png" height="16px" alt="balon"> ';
+        //     document.querySelector('#saqueEquipoIzq').innerHTML = '<img src="assets/icon/volleyball_1.png" height="16px" alt="balon"> ';
         // }
 
         // tiene_el_saqueIzq = document.querySelector('#saqueEquipoIzq').getAttribute('data-saqueequipoizq');
@@ -293,7 +333,7 @@ $(document).ready(function () {
         //     }
         //     document.querySelector('#saqueEquipoIzq').setAttribute('data-saqueequipoizq', 'false');
         //     document.querySelector('#saqueEquipoDer').setAttribute('data-saqueequipoder', 'true');
-        //     document.querySelector('#saqueEquipoDer').innerHTML = '<img src="assets/icon/volleyball_ico.png" height="16px" alt="balon"> ';
+        //     document.querySelector('#saqueEquipoDer').innerHTML = '<img src="assets/icon/volleyball_1.png" height="16px" alt="balon"> ';
         // }
 
 
@@ -470,7 +510,6 @@ $(document).ready(function () {
         set2 = true;
 
         $('#divSet2').addClass('d-none');
-        $('#divFinalizar').removeClass('d-none');
 
         $("#spnTiempo1Der").addClass("text-success");
         $("#spnTiempo1Der").removeClass("text-danger");
@@ -502,7 +541,7 @@ $(document).ready(function () {
     });
 
     $('#ir_al_set3').click(function () {
-        // set2 va a iniciar
+        // set3 va a iniciar
         set3 = true;
         sets_enfrentamiento = 3;
 
@@ -548,15 +587,27 @@ $(document).ready(function () {
 
         let id_ganador = sets_ganadoIzq > sets_ganadoDer ? idEquipoIzq : idEquipoDer;
 
-        $('#resultSet3EquipoIzq').text(puntosEquipoIzq);
-        $('#resultSet3EquipoDer').text(puntosEquipoDer);
+        if (set3 === false) {
+
+            $('#resultSet2EquipoIzq').text(puntosEquipoIzq);
+            $('#resultSet2EquipoDer').text(puntosEquipoDer);
+        } else {
+            $('#resultSet3EquipoIzq').text(puntosEquipoIzq);
+            $('#resultSet3EquipoDer').text(puntosEquipoDer);
+        }
+
 
         let idEnfrentamiento = document.querySelector('#idEnfrentamiento').getAttribute('data-idenfrentamiento');
+
+        puntosTotalesEquipoIzq = Number($('#resultSet1EquipoIzq').text()) + Number($('#resultSet2EquipoIzq').text()) + Number($('#resultSet3EquipoIzq').text());
+        puntosTotalesEquipoDer = Number($('#resultSet1EquipoDer').text()) + Number($('#resultSet2EquipoDer').text()) + Number($('#resultSet3EquipoDer').text());
+
         obj_equipoIzq = {
             idEquipoIzq: document.querySelector('#idEquipoIzq').getAttribute('data-idequipoizq'),
             resultSet1EquipoIzq: $('#resultSet1EquipoIzq').text(),
             resultSet2EquipoIzq: $('#resultSet2EquipoIzq').text(),
             resultSet3EquipoIzq: $('#resultSet3EquipoIzq').text(),
+            puntosTotalesEquipoIzq: puntosTotalesEquipoIzq,
         };
 
         obj_equipoDer = {
@@ -564,9 +615,8 @@ $(document).ready(function () {
             resultSet1EquipoDer: $('#resultSet1EquipoDer').text(),
             resultSet2EquipoDer: $('#resultSet2EquipoDer').text(),
             resultSet3EquipoDer: $('#resultSet3EquipoDer').text(),
+            puntosTotalesEquipoDer: puntosTotalesEquipoDer,
         };
-
-        console.log(idEnfrentamiento + " ... " + id_ganador);
 
         $.ajax({
             type: 'post',
@@ -581,16 +631,27 @@ $(document).ready(function () {
                 obj_equipoDer: obj_equipoDer,
             },
             success: function (data) {
-                if (data.status == 'ok') {
+                if (data.result == 'ok') {
                     alert('Datos registrados con éxito');
-                } else if (data.status == 'err') {
+                    document.getElementById("sumar_eq_izq").setAttribute("disabled", "");
+                    document.getElementById("restar_eq_izq").disabled = true;
+                    document.getElementById("sumar_eq_der").setAttribute("disabled", true);
+                    document.getElementById("restar_eq_der").setAttribute("disabled", true);
+                    document.getElementById("divJuegoTerminado").classList.remove("d-none");
+                    document.getElementById("divSet3").classList.add("d-none");
+                } else if (data.result == 'err') {
                     alert('No se pudieron registrar los datos. Volver a intentar.');
                 }
             },
         });
+    });
 
+    $('#ir_tbl_gral').click(function () {
+        window.location = 'index.html';
+    });
 
-
+    $('#ir_enfrentamientos').click(function () {
+        window.location = 'roles.html';
     });
 
 });
