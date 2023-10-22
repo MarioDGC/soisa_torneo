@@ -151,7 +151,7 @@ $(document).ready(function () {
         tiene_el_saqueIzq = document.querySelector('#saqueEquipoIzq').getAttribute('data-saqueequipoizq');
 
         if (tiene_el_saqueIzq === "false") {
-            document.querySelector('#saqueEquipoIzq').innerHTML = '<img src="assets/icon/volleyball_1.png" height="16px" alt="balon"> ';
+            document.querySelector('#saqueEquipoIzq').innerHTML = '<img src="assets/icon/volleyball_ico.png" height="16px" alt="balon"> ';
             if (document.querySelector('#saqueEquipoDer').childNodes.length > 0) {
                 document.querySelector('#saqueEquipoDer').childNodes[0].remove();
             }
@@ -209,7 +209,7 @@ $(document).ready(function () {
         tiene_el_saqueDer = document.querySelector('#saqueEquipoDer').getAttribute('data-saqueequipoder');
 
         if (tiene_el_saqueDer === "false") {
-            document.querySelector('#saqueEquipoDer').innerHTML = '<img src="assets/icon/volleyball_1.png" height="16px" alt="balon"> ';
+            document.querySelector('#saqueEquipoDer').innerHTML = '<img src="assets/icon/volleyball_ico.png" height="16px" alt="balon"> ';
             if (document.querySelector('#saqueEquipoIzq').childNodes.length > 0) {
                 document.querySelector('#saqueEquipoIzq').childNodes[0].remove();
             }
@@ -303,11 +303,11 @@ $(document).ready(function () {
         // lado del SAQUE
         if (document.querySelector('#saqueEquipoIzq').childNodes.length > 0) {
             document.querySelector('#saqueEquipoIzq').childNodes[0].remove();
-            document.querySelector('#saqueEquipoDer').innerHTML = '<img src="assets/icon/volleyball_1.png" height = "16px" alt = "balon"> ';
+            document.querySelector('#saqueEquipoDer').innerHTML = '<img src="assets/icon/volleyball_ico.png" height = "16px" alt = "balon"> ';
         }
         if (document.querySelector('#saqueEquipoDer').childNodes.length > 0) {
             document.querySelector('#saqueEquipoDer').childNodes[0].remove();
-            document.querySelector('#saqueEquipoIzq').innerHTML = '<img src="assets/icon/volleyball_1.png" height = "16px" alt = "balon"> ';
+            document.querySelector('#saqueEquipoIzq').innerHTML = '<img src="assets/icon/volleyball_ico.png" height = "16px" alt = "balon"> ';
         }
 
 
@@ -322,7 +322,7 @@ $(document).ready(function () {
         //     }
         //     document.querySelector('#saqueEquipoDer').setAttribute('data-saqueequipoder', 'false');
         //     document.querySelector('#saqueEquipoIzq').setAttribute('data-saqueequipoizq', 'true');
-        //     document.querySelector('#saqueEquipoIzq').innerHTML = '<img src="assets/icon/volleyball_1.png" height="16px" alt="balon"> ';
+        //     document.querySelector('#saqueEquipoIzq').innerHTML = '<img src="assets/icon/volleyball_ico.png" height="16px" alt="balon"> ';
         // }
 
         // tiene_el_saqueIzq = document.querySelector('#saqueEquipoIzq').getAttribute('data-saqueequipoizq');
@@ -333,7 +333,7 @@ $(document).ready(function () {
         //     }
         //     document.querySelector('#saqueEquipoIzq').setAttribute('data-saqueequipoizq', 'false');
         //     document.querySelector('#saqueEquipoDer').setAttribute('data-saqueequipoder', 'true');
-        //     document.querySelector('#saqueEquipoDer').innerHTML = '<img src="assets/icon/volleyball_1.png" height="16px" alt="balon"> ';
+        //     document.querySelector('#saqueEquipoDer').innerHTML = '<img src="assets/icon/volleyball_ico.png" height="16px" alt="balon"> ';
         // }
 
 
@@ -606,7 +606,7 @@ $(document).ready(function () {
             idEquipoIzq: document.querySelector('#idEquipoIzq').getAttribute('data-idequipoizq'),
             resultSet1EquipoIzq: $('#resultSet1EquipoIzq').text(),
             resultSet2EquipoIzq: $('#resultSet2EquipoIzq').text(),
-            resultSet3EquipoIzq: $('#resultSet3EquipoIzq').text(),
+            resultSet3EquipoIzq: $('#resultSet3EquipoIzq').text() == '' ? 0 : $('#resultSet3EquipoIzq').text(),
             puntosTotalesEquipoIzq: puntosTotalesEquipoIzq,
         };
 
@@ -614,7 +614,7 @@ $(document).ready(function () {
             idEquipoDer: document.querySelector('#idEquipoDer').getAttribute('data-idequipoder'),
             resultSet1EquipoDer: $('#resultSet1EquipoDer').text(),
             resultSet2EquipoDer: $('#resultSet2EquipoDer').text(),
-            resultSet3EquipoDer: $('#resultSet3EquipoDer').text(),
+            resultSet3EquipoDer: $('#resultSet3EquipoDer').text() == '' ? 0 : $('#resultSet3EquipoDer').text(),
             puntosTotalesEquipoDer: puntosTotalesEquipoDer,
         };
 

@@ -15,7 +15,8 @@
 }
 
 .body-2 {
-    background-image: url("../assets/img/bg-8.jpg");
+    /* background-image: url("../assets/img/bg-8.jpg"); */
+    background-image: url("../assets/img/grey-bg.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     /* deja fijo el fondo */
@@ -54,7 +55,7 @@
 #body_rolados {
     /* background-image: url("../assets/img/bg-estadio2.jpeg"); */
     background-image: linear-gradient(rgba(0, 0, 0, 0.45),
-            rgba(0, 0, 0, 0.45)), url("../assets/img/bg-estadio2.jpeg");
+            rgba(0, 0, 0, 0.45)), url("../assets/img/triangle-bg.png");
     background-repeat: no-repeat;
     /* deja fijo el fondo */
     background-position: center;

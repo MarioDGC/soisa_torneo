@@ -2,328 +2,249 @@
 
 <html lang="en">
 
-
-
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-
-
     <!-- <script src="js/jquery-3.6.0.min.js"></script> -->
-
-
 
     <link rel="stylesheet" href="css/styles.css">
 
-
-
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-
-
     <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
-
-
 
     <title>Juego</title>
 
 </head>
 
-
-
 <body class="container-fluid body-2">
 
+    <div class="row mt-5 justify-content-center">
 
-
-    <div class="row mt-5">
-
-        <div class="col-5">
-
-            <div class="row">
-
-                <div class="col-12 text-center">
-                    <span id="idEnfrentamiento" data-idenfrentamiento=""></span>
-                    <span class="equipos-enfrentamientos" id="idEquipoIzq" data-idequipoizq=""></span>
-
-                </div>
-
-            </div>
-
+        <div class="col-md-6">
             <div class="row justify-content-center">
+                <!-- D A T O S - E Q U I P O - I Z Q U I E R D A -->
+                <div class="col-5">
 
-                <div class="col-6 text-center">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <span id="idEnfrentamiento" data-idenfrentamiento=""></span>
+                            <span class="equipos-enfrentamientos" id="idEquipoIzq" data-idequipoizq=""></span>
+                        </div>
+                    </div>
 
-                    <span class="marcador" id="puntosEquipoIzq">0</span>
+                    <div class="row justify-content-center">
+                        <div class="col-6 text-center">
+                            <span class="marcador" id="puntosEquipoIzq">0</span>
+                        </div>
+                    </div>
 
+                    <div class="row justify-content-center">
+
+                        <div class="col-6 text-center">
+                            <p id="tiempo1EquipoIzq" data-tiempo1equipoizq="false"><span class="text-success "
+                                    id="spnTiempo1Izq"><i class='bx bx-stopwatch tiempo-equipo'></i></span></p>
+                        </div>
+
+                        <div class="col-6 text-center">
+                            <p id="tiempo2EquipoIzq" data-tiempo2equipoizq="false"><span class="text-success"
+                                    id="spnTiempo2Izq"><i class='bx bx-stopwatch tiempo-equipo'></i></span></p>
+                        </div>
+
+                    </div>
+
+                    <div class="row justify-content-center">
+
+                        <div class="col-6 text-center">
+                            <button class="btn btn-warning btn-sm btn-block sumar-restar" id="restar_eq_izq"
+                                type="button">-</button>
+                        </div>
+
+                        <div class="col-6 text-center">
+                            <button class="btn btn-success btn-sm btn-block sumar-restar" id="sumar_eq_izq"
+                                type="button">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- D A T O S - C E N T R A L E S - R E S U L T A D O S -->
+                <div class="col-2">
+
+                    <div class="row justify-content-center">
+                        <div class="col-12 text-center">
+                            <button class="btn btn-info btn-block" id="cambiar_lados" type="button"><i
+                                    class='bx bx-transfer'></i></button>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center my-2">
+
+                        <!-- S E T S - G A N A D O S -->
+                        <div class="col-6 text-center">
+                            <p id="setGanadoIzq">0</p>
+                        </div>
+
+                        <div class="col-6 text-center">
+                            <p id="setGanadoDer">0</p>
+                        </div>
+
+                    </div>
+
+                    <div class="row justify-content-center">
+
+                        <!-- Q U I E N - T I E N E - E L - S A Q U E -->
+                        <div class="col-6 text-center">
+                            <p id="saqueEquipoIzq" data-saqueequipoizq="false"></p>
+                        </div>
+
+                        <div class="col-6 text-center">
+                            <p id="saqueEquipoDer" data-saqueequipoder="false"></p>
+                        </div>
+
+                    </div>
+
+                    <!-- R E S U L T A D O S - P O R - S E T-->
+                    <div class="row justify-content-center" id="divResultSet1">
+
+                        <div class="col-6 text-center">
+                            <p id="resultSet1EquipoIzq"></p>
+                        </div>
+
+                        <div class="col-6 text-center">
+                            <p id="resultSet1EquipoDer"></p>
+                        </div>
+
+                    </div>
+
+                    <div class="row justify-content-center" id="divResultSet2">
+
+                        <div class="col-6 text-center">
+                            <p id="resultSet2EquipoIzq"></p>
+                        </div>
+
+                        <div class="col-6 text-center">
+                            <p id="resultSet2EquipoDer"></p>
+                        </div>
+
+                    </div>
+
+                    <div class="row justify-content-center" id="divResultSet3">
+
+                        <div class="col-6 text-center">
+                            <p id="resultSet3EquipoIzq"></p>
+                        </div>
+
+                        <div class="col-6 text-center">
+                            <p id="resultSet3EquipoDer"></p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- D A T O S - E Q U I P O - D E R E C H A -->
+                <div class="col-5">
+
+                    <div class="row justify-content-center">
+                        <div class="col-12 text-center">
+                            <span class="equipos-enfrentamientos" id="idEquipoDer" data-idequipoder=""></span>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-6 text-center">
+                            <span class="marcador" id="puntosEquipoDer">0</span>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+
+                        <div class="col-6 text-center">
+                            <p id="tiempo1EquipoDer" data-tiempo1equipoder="false"><span class="text-success"
+                                    id="spnTiempo1Der"><i class='bx bx-stopwatch tiempo-equipo'></i></span></p>
+                        </div>
+
+                        <div class="col-6 text-center">
+                            <p id="tiempo2Equipoder" data-tiempo1equipoder="false"><span class="text-success"
+                                    id="spnTiempo2Der"><i class='bx bx-stopwatch tiempo-equipo'></i></span></p>
+                        </div>
+
+                    </div>
+
+                    <div class="row justify-content-center">
+
+                        <div class="col-6 text-center">
+                            <button class="btn btn-warning btn-sm btn-block sumar-restar" id="restar_eq_der"
+                                type="button">-</button>
+                        </div>
+
+                        <div class="col-6 text-center">
+                            <button class="btn btn-success btn-sm btn-block sumar-restar" id="sumar_eq_der"
+                                type="button">+</button>
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
 
-            <div class="row justify-content-center">
+            <!-- B O T O N E S - I R - A - S I G U I E N T E S - S E T - O - F I N A L I Z A R -->
+            <div class="row mt-3 mb-5 row justify-content-center">
 
-                <div class="col-6 text-center">
-
-                    <p id="tiempo1EquipoIzq" data-tiempo1equipoizq="false"><span class="text-success "
-                            id="spnTiempo1Izq"><i class='bx bx-stopwatch tiempo-equipo'></i></span></p>
-
+                <div class="col-12 d-none" id="divSet2">
+                    <div class="row justify-content-center">
+                        <div class="col-8">
+                            <button class="btn btn-primary btn-sm btn-block sumar-restar" id="ir_al_set2"
+                                type="button">Ir
+                                al
+                                set 2</button>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="col-6 text-center">
+                <div class="col-12" id="divSet3">
+                    <div class="row justify-content-center mb-4 d-none" id="divIrSet3">
+                        <div class="col-8">
+                            <button class="btn btn-primary btn-sm btn-block sumar-restar" id="ir_al_set3"
+                                type="button">Ir
+                                al
+                                set 3</button>
+                        </div>
+                    </div>
 
-                    <p id="tiempo2EquipoIzq" data-tiempo2equipoizq="false"><span class="text-success"
-                            id="spnTiempo2Izq"><i class='bx bx-stopwatch tiempo-equipo'></i></span></p>
-
+                    <div class="row justify-content-center d-none" id="divFinalizar">
+                        <div class="col-8">
+                            <button class="btn btn-danger btn-sm btn-block sumar-restar" id="finalizar_juego"
+                                type="button">Finalizar
+                                juego</button>
+                        </div>
+                    </div>
                 </div>
 
-            </div>
-
-            <div class="row justify-content-center">
-
-                <div class="col-6 text-center">
-
-                    <button class="btn btn-warning btn-sm btn-block sumar-restar" id="restar_eq_izq"
-                        type="button">-</button>
-
-                </div>
-
-                <div class="col-6 text-center">
-
-                    <button class="btn btn-success btn-sm btn-block sumar-restar" id="sumar_eq_izq"
-                        type="button">+</button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="col-2">
-
-            <div class="row justify-content-center">
-
-                <div class="col-12 text-center">
-
-                    <button class="btn btn-info btn-block" id="cambiar_lados" type="button"><i
-                            class='bx bx-transfer'></i></button>
-
-                </div>
-
-            </div>
-
-            <div class="row justify-content-center my-2">
-
-                <!-- S E T S - G A N A D O S -->
-
-                <div class="col-6 text-center">
-
-                    <p id="setGanadoIzq">0</p>
-
-                </div>
-
-                <div class="col-6 text-center">
-
-                    <p id="setGanadoDer">0</p>
-
-                </div>
-
-            </div>
-
-            <div class="row justify-content-center">
-
-                <!-- Q U I E N - T I E N E - E L - S A Q U E -->
-
-                <div class="col-6 text-center">
-
-                    <p id="saqueEquipoIzq" data-saqueequipoizq="false"></p>
-
-                </div>
-
-                <div class="col-6 text-center">
-                    <p id="saqueEquipoDer" data-saqueequipoder="false"></p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- R E S U L T A D O S - P O R - S E T-->
-
-            <div class="row justify-content-center" id="divResultSet1">
-
-                <div class="col-6 text-center">
-
-                    <p id="resultSet1EquipoIzq"></p>
-
-                </div>
-
-                <div class="col-6 text-center">
-
-                    <p id="resultSet1EquipoDer"></p>
-
-                </div>
-
-            </div>
-
-            <div class="row justify-content-center" id="divResultSet2">
-
-                <div class="col-6 text-center">
-
-                    <p id="resultSet2EquipoIzq"></p>
-
-                </div>
-
-                <div class="col-6 text-center">
-
-                    <p id="resultSet2EquipoDer"></p>
-
-                </div>
-
-            </div>
-
-            <div class="row justify-content-center" id="divResultSet3">
-
-                <div class="col-6 text-center">
-
-                    <p id="resultSet3EquipoIzq"></p>
-
-                </div>
-
-                <div class="col-6 text-center">
-
-                    <p id="resultSet3EquipoDer"></p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="col-5">
-
-            <div class="row justify-content-center">
-
-                <div class="col-12 text-center">
-
-                    <span class="equipos-enfrentamientos" id="idEquipoDer" data-idequipoder=""></span>
-
-                </div>
-
-            </div>
-
-            <div class="row justify-content-center">
-
-                <div class="col-6 text-center">
-
-                    <span class="marcador" id="puntosEquipoDer">0</span>
-
-                </div>
-
-            </div>
-
-            <div class="row justify-content-center">
-
-                <div class="col-6 text-center">
-
-                    <p id="tiempo1EquipoDer" data-tiempo1equipoder="false"><span class="text-success"
-                            id="spnTiempo1Der"><i class='bx bx-stopwatch tiempo-equipo'></i></span></p>
-
-                </div>
-
-                <div class="col-6 text-center">
-
-                    <p id="tiempo2Equipoder" data-tiempo1equipoder="false"><span class="text-success"
-                            id="spnTiempo2Der"><i class='bx bx-stopwatch tiempo-equipo'></i></span></p>
-
-                </div>
-
-            </div>
-
-            <div class="row justify-content-center">
-
-                <div class="col-6 text-center">
-
-                    <button class="btn btn-warning btn-sm btn-block sumar-restar" id="restar_eq_der"
-                        type="button">-</button>
-
-                </div>
-
-                <div class="col-6 text-center">
-
-                    <button class="btn btn-success btn-sm btn-block sumar-restar" id="sumar_eq_der"
-                        type="button">+</button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <div class="row mt-3 mb-5 row justify-content-center">
-
-        <div class="col-12 d-none" id="divSet2">
-            <div class="row justify-content-center">
-                <div class="col-8">
-                    <button class="btn btn-primary btn-sm btn-block sumar-restar" id="ir_al_set2" type="button">Ir al
-                        set 2</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12" id="divSet3">
-            <div class="row justify-content-center mb-4 d-none" id="divIrSet3">
-                <div class="col-8">
-                    <button class="btn btn-primary btn-sm btn-block sumar-restar" id="ir_al_set3" type="button">Ir al
-                        set 3</button>
-                </div>
-            </div>
-
-            <div class="row justify-content-center d-none" id="divFinalizar">
-                <div class="col-8">
-                    <button class="btn btn-danger btn-sm btn-block sumar-restar" id="finalizar_juego"
-                        type="button">Finalizar
-                        juego</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 d-none" id="divJuegoTerminado">
-            <div class="row justify-content-center mb-4">
-                <div class="col-8">
-                    <button class="btn btn-dark btn-sm btn-block sumar-restar text-light" id="ir_tbl_gral"
-                        type="button">Ir a
-                        tabla general</button>
-                </div>
-            </div>
-
-            <div class="row justify-content-center mb-4">
-                <div class="col-8">
-                    <button class="btn btn-dark btn-sm btn-block sumar-restar text-light" id="ir_enfrentamientos"
-                        type="button">Ir a enfrentamientos</button>
+                <div class="col-12 d-none" id="divJuegoTerminado">
+                    <div class="row justify-content-center mb-4">
+                        <div class="col-8">
+                            <button class="btn btn-dark btn-sm btn-block sumar-restar text-light" id="ir_tbl_gral"
+                                type="button">Ir a
+                                tabla general</button>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center mb-4">
+                        <div class="col-8">
+                            <button class="btn btn-dark btn-sm btn-block sumar-restar text-light"
+                                id="ir_enfrentamientos" type="button">Ir a enfrentamientos</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
     </div>
-
-    </div>
-
 
 
     <script src="js/jquery-3.7.1.min.js"></script>
@@ -334,12 +255,6 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
-
-
-
-
 </body>
-
-
 
 </html>
