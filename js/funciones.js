@@ -166,10 +166,12 @@ $(document).ready(function () {
                 puntosTotalesEquipoIzq = puntosEquipoIzq;
                 puntosTotalesEquipoDer = puntosEquipoDer;
                 $('#divSet2').removeClass('d-none');
+                ocultar_btns_sumar_restar();
             } else if (set3 === false) {
                 alert('Final de Set 2');
                 puntosTotalesEquipoIzq = puntosEquipoIzq;
                 puntosTotalesEquipoDer = puntosEquipoDer;
+                ocultar_btns_sumar_restar();
                 if (sets_ganadoIzq < 2) {
                     $('#divIrSet3').removeClass('d-none');
                 } else {
@@ -189,6 +191,7 @@ $(document).ready(function () {
                     alert('Final de Set 3. Juego finalizado');
                     puntosTotalesEquipoIzq = puntosEquipoIzq;
                     puntosTotalesEquipoDer = puntosEquipoDer;
+                    ocultar_btns_sumar_restar();
                     $('#divFinalizar').removeClass('d-none');
                 }
             }
@@ -199,6 +202,11 @@ $(document).ready(function () {
     $('#restar_eq_izq').click(function () {
         puntosEquipoIzq = puntosEquipoIzq - 1;
         $('#puntosEquipoIzq').text(puntosEquipoIzq);
+
+        if (set3) {
+            puntosEquipoIzq == 7 ? segundo_tiempo_set3 = false : null;
+            puntosEquipoDer == 7 ? segundo_tiempo_set3 = false : null;
+        }
     });
 
 
@@ -222,9 +230,16 @@ $(document).ready(function () {
 
             if (set1 === true && set2 === false) {
                 alert('Final de Set 1');
+                puntosTotalesEquipoIzq = puntosEquipoIzq;
+                puntosTotalesEquipoDer = puntosEquipoDer;
                 $('#divSet2').removeClass('d-none');
+                ocultar_btns_sumar_restar();
+
             } else if (set3 === false) {
                 alert('Final de Set 2');
+                puntosTotalesEquipoIzq = puntosEquipoIzq;
+                puntosTotalesEquipoDer = puntosEquipoDer;
+                ocultar_btns_sumar_restar();
                 if (sets_ganadoDer < 2) {
                     $('#divIrSet3').removeClass('d-none');
                 } else {
@@ -243,7 +258,11 @@ $(document).ready(function () {
 
             if (puntosEquipoDer >= 15 && (puntosEquipoDer - puntosEquipoIzq) >= 2) {
                 alert('Final de Set 3. Juego finalizado');
+                puntosTotalesEquipoIzq = puntosEquipoIzq;
+                puntosTotalesEquipoDer = puntosEquipoDer;
+                ocultar_btns_sumar_restar();
                 $('#divFinalizar').removeClass('d-none');
+
             }
         }
     });
@@ -253,6 +272,11 @@ $(document).ready(function () {
     $('#restar_eq_der').click(function () {
         puntosEquipoDer = puntosEquipoDer - 1;
         $('#puntosEquipoDer').text(puntosEquipoDer);
+
+        if (set3) {
+            puntosEquipoIzq == 7 ? segundo_tiempo_set3 = false : null;
+            puntosEquipoDer == 7 ? segundo_tiempo_set3 = false : null;
+        }
     });
 
 
@@ -262,26 +286,22 @@ $(document).ready(function () {
         let nombre_equipo_der_temp = nombre_equipoIzq;
         nombre_equipoIzq = nombre_equipo_izq_temp;
         nombre_equipoDer = nombre_equipo_der_temp;
-
-
         $('#idEquipoIzq').text(nombre_equipoIzq);
-        document.querySelector('#idEquipoIzq').setAttribute('data-idequipoizq', idEquipoIzq);
         $('#idEquipoDer').text(nombre_equipoDer);
-        document.querySelector('#idEquipoDer').setAttribute('data-idequipoder', idEquipoDer);
 
 
         let id_equipo_izq_temp = idEquipoDer;
         let id_equipo_der_temp = idEquipoIzq;
         idEquipoIzq = id_equipo_izq_temp;
         idEquipoDer = id_equipo_der_temp;
+        document.querySelector('#idEquipoIzq').setAttribute('data-idequipoizq', idEquipoIzq);
+        document.querySelector('#idEquipoDer').setAttribute('data-idequipoder', idEquipoDer);
 
 
         let puntos_equipo_izq_temp = puntosEquipoDer;
         let puntos_equipo_der_temp = puntosEquipoIzq;
         puntosEquipoIzq = puntos_equipo_izq_temp;
         puntosEquipoDer = puntos_equipo_der_temp;
-
-
         $('#puntosEquipoIzq').text(puntosEquipoIzq);
         $('#puntosEquipoDer').text(puntosEquipoDer);
 
@@ -290,7 +310,6 @@ $(document).ready(function () {
         let puntosTotalesEquipoDer_temp = puntosTotalesEquipoIzq;
         puntosTotalesEquipoIzq += puntosTotalesEquipoIzq_temp;
         puntosTotalesEquipoDer += puntosTotalesEquipoDer_temp;
-
 
 
         // sets ganados
@@ -508,6 +527,7 @@ $(document).ready(function () {
     $('#ir_al_set2').click(function () {
         // set2 va a iniciar
         set2 = true;
+        mostrar_btns_sumar_restar();
 
         $('#divSet2').addClass('d-none');
 
@@ -544,6 +564,7 @@ $(document).ready(function () {
         // set3 va a iniciar
         set3 = true;
         sets_enfrentamiento = 3;
+        mostrar_btns_sumar_restar();
 
         $('#divIrSet3').addClass('d-none');
 
@@ -633,10 +654,7 @@ $(document).ready(function () {
             success: function (data) {
                 if (data.result == 'ok') {
                     alert('Datos registrados con éxito');
-                    document.getElementById("sumar_eq_izq").setAttribute("disabled", "");
-                    document.getElementById("restar_eq_izq").disabled = true;
-                    document.getElementById("sumar_eq_der").setAttribute("disabled", true);
-                    document.getElementById("restar_eq_der").setAttribute("disabled", true);
+                    ocultar_btns_sumar_restar();
                     document.getElementById("divJuegoTerminado").classList.remove("d-none");
                     document.getElementById("divSet3").classList.add("d-none");
                 } else if (data.result == 'err') {
@@ -653,5 +671,19 @@ $(document).ready(function () {
     $('#ir_enfrentamientos').click(function () {
         window.location = 'roles.html';
     });
+
+    function ocultar_btns_sumar_restar() {
+        const elements = document.querySelectorAll('#sumar_eq_izq, #restar_eq_izq, #sumar_eq_der, #restar_eq_der');
+        elements.forEach(element => {
+            element.classList.add('d-none');
+        });
+    }
+
+    function mostrar_btns_sumar_restar() {
+        const elements = document.querySelectorAll('#sumar_eq_izq, #restar_eq_izq, #sumar_eq_der, #restar_eq_der');
+        elements.forEach(element => {
+            element.classList.remove('d-none');
+        });
+    }
 
 });
