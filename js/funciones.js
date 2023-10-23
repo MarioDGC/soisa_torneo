@@ -153,7 +153,7 @@ $(document).ready(function () {
         tiene_el_saqueIzq = document.querySelector('#saqueEquipoIzq').getAttribute('data-saqueequipoizq');
 
         if (tiene_el_saqueIzq === "false") {
-            document.querySelector('#saqueEquipoIzq').innerHTML = '<img src="/assets/img/ball_1/favicon-16x16.png" height="16px" alt="balon"> ';
+            document.querySelector('#saqueEquipoIzq').innerHTML = '<img src="assets/img/ball_1/favicon-16x16.png" height="16px" alt="balon"> ';
             if (document.querySelector('#saqueEquipoDer').childNodes.length > 0) {
                 document.querySelector('#saqueEquipoDer').childNodes[0].remove();
             }
@@ -244,7 +244,7 @@ $(document).ready(function () {
         tiene_el_saqueDer = document.querySelector('#saqueEquipoDer').getAttribute('data-saqueequipoder');
 
         if (tiene_el_saqueDer === "false") {
-            document.querySelector('#saqueEquipoDer').innerHTML = '<img src="/assets/img/ball_1/favicon-16x16.png" height="16px" alt="balon"> ';
+            document.querySelector('#saqueEquipoDer').innerHTML = '<img src="assets/img/ball_1/favicon-16x16.png" height="16px" alt="balon"> ';
             if (document.querySelector('#saqueEquipoIzq').childNodes.length > 0) {
                 document.querySelector('#saqueEquipoIzq').childNodes[0].remove();
             }
@@ -375,11 +375,11 @@ $(document).ready(function () {
         // lado del SAQUE
         if (document.querySelector('#saqueEquipoIzq').childNodes.length > 0) {
             document.querySelector('#saqueEquipoIzq').childNodes[0].remove();
-            document.querySelector('#saqueEquipoDer').innerHTML = '<img src="/assets/img/ball_1/favicon-16x16.png" height = "16px" alt = "balon"> ';
+            document.querySelector('#saqueEquipoDer').innerHTML = '<img src="assets/img/ball_1/favicon-16x16.png" height = "16px" alt = "balon"> ';
         }
         if (document.querySelector('#saqueEquipoDer').childNodes.length > 0) {
             document.querySelector('#saqueEquipoDer').childNodes[0].remove();
-            document.querySelector('#saqueEquipoIzq').innerHTML = '<img src="/assets/img/ball_1/favicon-16x16.png" height = "16px" alt = "balon"> ';
+            document.querySelector('#saqueEquipoIzq').innerHTML = '<img src="assets/img/ball_1/favicon-16x16.png" height = "16px" alt = "balon"> ';
         }
 
 
