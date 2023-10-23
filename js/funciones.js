@@ -89,11 +89,13 @@ $(document).ready(function () {
             success: function (data) {
 
                 if (data.result == 'ocupado') {
-                    alert('Ya existe un juego rolado en esa fecha y horario');
+                    // alert('Ya existe un juego rolado en esa fecha y horario');
+                    Swal.fire('Ya existe un juego rolado en esa fecha y horario')
                 } else if (data.result == 'ok') {
                     location.reload();
                 } else {
-                    alert('No se pudo rolar el enfrentamiento, volver a intentar');
+                    // alert('No se pudo rolar el enfrentamiento, volver a intentar');
+                    Swal.fire('No se pudo rolar el enfrentamiento, volver a intentar')
                 }
 
             },
@@ -162,13 +164,29 @@ $(document).ready(function () {
         if (puntosEquipoIzq >= 25 && (puntosEquipoIzq - puntosEquipoDer) >= 2) {
 
             if (set1 === true && set2 === false) {
-                alert('Final de Set 1');
+                // alert('Final de Set 1');
+                Swal.fire({
+                    title: 'Final de Set 1',
+                    // text: 'Final de Set 1',
+                    imageUrl: 'assets/img/jugador_volleyball.png',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Jugador volleyball',
+                })
                 puntosTotalesEquipoIzq = puntosEquipoIzq;
                 puntosTotalesEquipoDer = puntosEquipoDer;
                 $('#divSet2').removeClass('d-none');
                 ocultar_btns_sumar_restar();
             } else if (set3 === false) {
-                alert('Final de Set 2');
+                // alert('Final de Set 2');
+                Swal.fire({
+                    title: 'Final de Set 2',
+                    // text: 'Final de Set 1',
+                    imageUrl: 'assets/img/jugador_volleyball.png',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Jugador volleyball',
+                })
                 puntosTotalesEquipoIzq = puntosEquipoIzq;
                 puntosTotalesEquipoDer = puntosEquipoDer;
                 ocultar_btns_sumar_restar();
@@ -182,13 +200,22 @@ $(document).ready(function () {
 
         if (set3) {
             if (segundo_tiempo_set3 === false) {
-                if (puntosEquipoIzq == 8) {
+                if (puntosEquipoIzq == 8 && puntosEquipoDer < 8) {
                     $('#cambiar_lados').click();
-                    alert('Mitad de set 3. Cambio de cancha');
+                    // alert('Mitad de set 3. Cambio de cancha');
+                    Swal.fire('Mitad de set 3. Cambio de cancha')
                 }
 
                 if (puntosEquipoIzq >= 15 && (puntosEquipoIzq - puntosEquipoDer) >= 2) {
-                    alert('Final de Set 3. Juego finalizado');
+                    // alert('Final de Set 3. Juego finalizado');
+                    Swal.fire({
+                        title: 'Final de Set 3',
+                        text: 'Juego finalizado',
+                        imageUrl: 'assets/img/jugador_volleyball.png',
+                        imageWidth: 400,
+                        imageHeight: 200,
+                        imageAlt: 'Jugador volleyball',
+                    })
                     puntosTotalesEquipoIzq = puntosEquipoIzq;
                     puntosTotalesEquipoDer = puntosEquipoDer;
                     ocultar_btns_sumar_restar();
@@ -229,14 +256,30 @@ $(document).ready(function () {
         if (puntosEquipoDer >= 25 && (puntosEquipoDer - puntosEquipoIzq) >= 2) {
 
             if (set1 === true && set2 === false) {
-                alert('Final de Set 1');
+                // alert('Final de Set 1');
+                Swal.fire({
+                    title: 'Final de Set 1',
+                    // text: 'Final de Set 1',
+                    imageUrl: 'assets/img/jugador_volleyball.png',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Jugador volleyball',
+                })
                 puntosTotalesEquipoIzq = puntosEquipoIzq;
                 puntosTotalesEquipoDer = puntosEquipoDer;
                 $('#divSet2').removeClass('d-none');
                 ocultar_btns_sumar_restar();
 
             } else if (set3 === false) {
-                alert('Final de Set 2');
+                // alert('Final de Set 2');
+                Swal.fire({
+                    title: 'Final de Set 2',
+                    // text: 'Final de Set 1',
+                    imageUrl: 'assets/img/jugador_volleyball.png',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Jugador volleyball',
+                })
                 puntosTotalesEquipoIzq = puntosEquipoIzq;
                 puntosTotalesEquipoDer = puntosEquipoDer;
                 ocultar_btns_sumar_restar();
@@ -250,14 +293,24 @@ $(document).ready(function () {
 
         if (set3) {
             if (segundo_tiempo_set3 === false) {
-                if (puntosEquipoDer == 8) {
+                if (puntosEquipoDer == 8 && puntosEquipoIzq < 8) {
                     $('#cambiar_lados').click();
-                    alert('Mitad de set 3. Cambio de cancha');
+                    // alert('Mitad de set 3. Cambio de cancha');
+                    Swal.fire('Mitad de set 3. Cambio de cancha')
                 }
             }
 
             if (puntosEquipoDer >= 15 && (puntosEquipoDer - puntosEquipoIzq) >= 2) {
-                alert('Final de Set 3. Juego finalizado');
+                // alert('Final de Set 3. Juego finalizado');
+
+                Swal.fire({
+                    title: 'Final de Set 3',
+                    text: 'Juego finalizado',
+                    imageUrl: 'assets/img/jugador_volleyball.png',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Jugador volleyball',
+                })
                 puntosTotalesEquipoIzq = puntosEquipoIzq;
                 puntosTotalesEquipoDer = puntosEquipoDer;
                 ocultar_btns_sumar_restar();
@@ -515,10 +568,12 @@ $(document).ready(function () {
             },
             success: function (data) {
                 if (data.result == 'ok') {
-                    alert("Enfrentamiento creado");
+                    // alert("Enfrentamiento creado");
+                    Swal.fire('Enfrentamiento creado')
                     location.reload();
                 } else {
-                    alert("Error al crear el enfrentamiento");
+                    // alert("Error al crear el enfrentamiento");
+                    Swal.fire('Error al crear el enfrentamiento')
                 }
             },
         });
@@ -653,12 +708,20 @@ $(document).ready(function () {
             },
             success: function (data) {
                 if (data.result == 'ok') {
-                    alert('Datos registrados con éxito');
+                    // alert('Datos registrados con éxito');
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Datos registrados con éxito',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                     ocultar_btns_sumar_restar();
                     document.getElementById("divJuegoTerminado").classList.remove("d-none");
                     document.getElementById("divSet3").classList.add("d-none");
                 } else if (data.result == 'err') {
-                    alert('No se pudieron registrar los datos. Volver a intentar.');
+                    // alert('No se pudieron registrar los datos. Volver a intentar.');
+                    Swal.fire('No se pudieron registrar los datos. Volver a intentar.')
                 }
             },
         });
