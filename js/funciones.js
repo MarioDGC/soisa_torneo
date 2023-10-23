@@ -205,22 +205,22 @@ $(document).ready(function () {
                     // alert('Mitad de set 3. Cambio de cancha');
                     Swal.fire('Mitad de set 3. Cambio de cancha')
                 }
+            }
 
-                if (puntosEquipoIzq >= 15 && (puntosEquipoIzq - puntosEquipoDer) >= 2) {
-                    // alert('Final de Set 3. Juego finalizado');
-                    Swal.fire({
-                        title: 'Final de Set 3',
-                        text: 'Juego finalizado',
-                        imageUrl: 'assets/img/jugador_volleyball.png',
-                        imageWidth: 400,
-                        imageHeight: 200,
-                        imageAlt: 'Jugador volleyball',
-                    })
-                    puntosTotalesEquipoIzq = puntosEquipoIzq;
-                    puntosTotalesEquipoDer = puntosEquipoDer;
-                    ocultar_btns_sumar_restar();
-                    $('#divFinalizar').removeClass('d-none');
-                }
+            if (puntosEquipoIzq >= 15 && (puntosEquipoIzq - puntosEquipoDer) >= 2) {
+                // alert('Final de Set 3. Juego finalizado');
+                Swal.fire({
+                    title: 'Final de Set 3',
+                    text: 'Juego finalizado',
+                    imageUrl: 'assets/img/jugador_volleyball.png',
+                    imageWidth: 400,
+                    imageHeight: 200,
+                    imageAlt: 'Jugador volleyball',
+                })
+                puntosTotalesEquipoIzq = puntosEquipoIzq;
+                puntosTotalesEquipoDer = puntosEquipoDer;
+                ocultar_btns_sumar_restar();
+                $('#divFinalizar').removeClass('d-none');
             }
         }
     });
@@ -302,7 +302,6 @@ $(document).ready(function () {
 
             if (puntosEquipoDer >= 15 && (puntosEquipoDer - puntosEquipoIzq) >= 2) {
                 // alert('Final de Set 3. Juego finalizado');
-
                 Swal.fire({
                     title: 'Final de Set 3',
                     text: 'Juego finalizado',
