@@ -169,8 +169,8 @@ $(document).ready(function () {
                     title: 'Final de Set 1',
                     // text: 'Final de Set 1',
                     imageUrl: 'assets/img/jugador_volleyball.png',
-                    imageWidth: 400,
-                    imageHeight: 200,
+                    imageWidth: 250,
+                    imageHeight: 130,
                     imageAlt: 'Jugador volleyball',
                 })
                 puntosTotalesEquipoIzq = puntosEquipoIzq;
@@ -183,8 +183,8 @@ $(document).ready(function () {
                     title: 'Final de Set 2',
                     // text: 'Final de Set 1',
                     imageUrl: 'assets/img/jugador_volleyball.png',
-                    imageWidth: 400,
-                    imageHeight: 200,
+                    imageWidth: 250,
+                    imageHeight: 130,
                     imageAlt: 'Jugador volleyball',
                 })
                 puntosTotalesEquipoIzq = puntosEquipoIzq;
@@ -213,8 +213,8 @@ $(document).ready(function () {
                     title: 'Final de Set 3',
                     text: 'Juego finalizado',
                     imageUrl: 'assets/img/jugador_volleyball.png',
-                    imageWidth: 400,
-                    imageHeight: 200,
+                    imageWidth: 250,
+                    imageHeight: 130,
                     imageAlt: 'Jugador volleyball',
                 })
                 puntosTotalesEquipoIzq = puntosEquipoIzq;
@@ -261,8 +261,8 @@ $(document).ready(function () {
                     title: 'Final de Set 1',
                     // text: 'Final de Set 1',
                     imageUrl: 'assets/img/jugador_volleyball.png',
-                    imageWidth: 400,
-                    imageHeight: 200,
+                    imageWidth: 250,
+                    imageHeight: 130,
                     imageAlt: 'Jugador volleyball',
                 })
                 puntosTotalesEquipoIzq = puntosEquipoIzq;
@@ -276,8 +276,8 @@ $(document).ready(function () {
                     title: 'Final de Set 2',
                     // text: 'Final de Set 1',
                     imageUrl: 'assets/img/jugador_volleyball.png',
-                    imageWidth: 400,
-                    imageHeight: 200,
+                    imageWidth: 250,
+                    imageHeight: 130,
                     imageAlt: 'Jugador volleyball',
                 })
                 puntosTotalesEquipoIzq = puntosEquipoIzq;
@@ -306,8 +306,8 @@ $(document).ready(function () {
                     title: 'Final de Set 3',
                     text: 'Juego finalizado',
                     imageUrl: 'assets/img/jugador_volleyball.png',
-                    imageWidth: 400,
-                    imageHeight: 200,
+                    imageWidth: 250,
+                    imageHeight: 130,
                     imageAlt: 'Jugador volleyball',
                 })
                 puntosTotalesEquipoIzq = puntosEquipoIzq;
