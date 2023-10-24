@@ -1,5 +1,6 @@
 # proyecto soisa
 includes/conexion.php
+test/
 
 # archivos
 *.log
