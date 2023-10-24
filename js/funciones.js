@@ -621,6 +621,7 @@ $(document).ready(function () {
         mostrar_btns_sumar_restar();
 
         $('#divIrSet3').addClass('d-none');
+        $('#divFinalizarForzar').removeClass('d-none');
 
         if (puntosEquipoIzq > puntosEquipoDer) {
             sets_ganadoIzq = +$('#setGanadoIzq').text() + 1;
@@ -648,6 +649,11 @@ $(document).ready(function () {
         $("#spnTiempo1Izq").removeClass("text-danger");
         $("#spnTiempo2Izq").addClass("text-success");
         $("#spnTiempo2Izq").removeClass("text-danger");
+    });
+
+
+    $('#divFinalizarForzar').click(function () {
+        $('#finalizar_juego').click();
     });
 
     $('#finalizar_juego').click(function () {
