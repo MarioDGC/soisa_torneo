@@ -32,6 +32,24 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
 }
 
+.resultado-partido {
+    background: linear-gradient(rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5));
+    color: white
+}
+
+.resultado-equipo {
+    /* font-size: 1.1rem; */
+}
+
+.trapezoid-left {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+}
+
+.trapezoid-right {
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+}
+
 .equipos-enfrentamientos {
     font-size: 1rem;
     font-weight: 700;

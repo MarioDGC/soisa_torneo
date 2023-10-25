@@ -30,10 +30,19 @@ $(document).ready(function () {
             success: function (data) {
                 // if (data.status == 'ok') {
                 $('#CatA').html(data.contentCatA);
-                $('#CatB').html(data.contentCatB);
                 // } else if (data.status == 'err') {
                 //     alert('Error al obtener la tabla de posiciones');
                 // }
+            },
+        });
+
+        $.ajax({
+            type: 'post',
+            url: 'controller/getResultadoEnfrentamiento.php',
+            dataType: 'json',
+            success: function (data) {
+                // if (data.status == 'ok') {
+                $('#idResultados').append(data.content);
             },
         });
     }
