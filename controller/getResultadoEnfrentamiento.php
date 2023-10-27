@@ -56,82 +56,46 @@
 
         if ($equipo_1_set_3 > $equipo_2_set_3) {
             $sets_equipo_1++;
-        } else {
+        } else if($equipo_2_set_3 > 0) {
             $sets_equipo_2++;
         }
 
-        $content .= '<div class="row justify-content-center my-3">
-                            <div class="col-11 text-center resultado-partido rounded-lg py-2">
-                                <div class="row justify-content-center">
-                                    <div class="col-12 text-center">Octubre 09</div>
-                                </div>
-                                <div class="row justify-content-center px-3 no-gutters">
-                                    <div class="col-12 text-center py-0 my-0">
-                                        <h5 id="" class="mb-0 py-0">2 &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; 1</h5>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-center px-3">
-                                    <div class="col-5 text-center trapezoid-left bg-info py-0 my-0">
-                                        <p id="" class="resultado-equipo mb-0 py-1">Descorchaditos</p>
-                                    </div>
-                                    <div class="col-2 text-center bg-dark py-0 m-0">
-                                        <b>
-                                            <p id="" class="mb-0 py-1">VS</p>
-                                        </b>
-                                    </div>
-                                    <div class="col-5 text-center trapezoid-right bg-info py-0 my-0">
-                                        <p id="" class="resultado-equipo mb-0 py-1">Los colaboradores</p>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-12 text-center">
-                                        <p id="" class="py-0 my-0">22-22 | 22-22 | 22-22</p>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-12 text-center">
-                                        <p id="" class="py-0 my-0 text-warning">Jornada 1</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>';
-
-        // $content .= '<div class="row justify-content-center my-3" data-id-enfrentamiento="'.$id_enfrentamiento.'">';
-        // $content .= '<div class="col-11 text-center resultado-partido rounded-lg py-2">';
-        // $content .= '<div class="row justify-content-center">';
-        // $content .= '<div class="col-12 text-center">'.$fecha_formateada.'</div>';
-        // $content .= '</div>';
-        // $content .= '<div class="row justify-content-center px-3 no-gutters">';
-        // $content .= '<div class="col-12 text-center py-0 my-0">';
-        // $content .= '<p id="" class="mb-0 py-0"><b>'.$sets_equipo_1.' &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; '.$sets_equipo_2.'</b></p>';
-        // $content .= '</div>';
-        // $content .= '</div>';
-        // $content .= '<div class="row justify-content-center px-3">';
-        // $content .= '<div class="col-5 text-center trapezoid-left bg-info py-0 my-0">';
-        // $content .= '<p id="" class="resultado-equipo mb-0 py-1" data-id-equipo-1="'.$id_equipo_1.'">'.$nombre_1.'</p>';
-        // $content .= '</div>';
-        // $content .= '<div class="col-2 text-center bg-dark py-0 m-0">';
-        // $content .= '<b>';
-        // $content .= '<p id="" class="mb-0 py-1">VS</p>';
-        // $content .= '</b>';
-        // $content .= '</div>';
-        // $content .= '<div class="col-5 text-center trapezoid-right bg-info py-0 my-0">';
-        // $content .= '<p id="" class="resultado-equipo mb-0 py-1" data-id-equipo-2="'.$id_equipo_2.'">'.$nombre_2.'</p>';
-        // $content .= '</div>';
-        // $content .= '</div>';
-        // $content .= '<div class="row justify-content-center">';
-        // $content .= '<div class="col-12 text-center">';
-        // $content .= '<p id="" class="py-0 my-0">'.$equipo_1_set_1.'-'.$equipo_2_set_1.' | '.$equipo_1_set_2.'-'.$equipo_2_set_2;
-        // $content .= ($equipo_1_set_3 > 0 || $equipo_2_set_3 > 0) ? ' | '.$equipo_1_set_3.'-'.$equipo_2_set_3.'</p>' : '</p>';
-        // $content .= '</div>';
-        // $content .= '</div>';
-        // $content .= '<div class="row justify-content-center">';
-        // $content .= '<div class="col-12 text-center">';
-        // $content .= '<p id="" class="py-0 my-0 text-warning">Jornada '.$jornada.'</p>';
-        // $content .= '</div>';
-        // $content .= '</div>';
-        // $content .= '</div>';
-        // $content .= '</div>';
+        $content .= '<div class="row justify-content-center my-3" data-id-enfrentamiento="'.$id_enfrentamiento.'">';
+        $content .= '<div class="col-11 text-center resultado-partido rounded-lg py-2">';
+        $content .= '<div class="row justify-content-center">';
+        $content .= '<div class="col-12 text-center">'.$fecha_formateada.'</div>';
+        $content .= '</div>';
+        $content .= '<div class="row justify-content-center px-3 no-gutters">';
+        $content .= '<div class="col-12 text-center py-0 my-0">';
+        $content .= '<p id="" class="mb-0 py-0"><b>'.$sets_equipo_1.' &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp; '.$sets_equipo_2.'</b></p>';
+        $content .= '</div>';
+        $content .= '</div>';
+        $content .= '<div class="row justify-content-center px-3">';
+        $content .= '<div class="col-5 text-center trapezoid-left bg-info py-0 my-0">';
+        $content .= '<p id="" class="resultado-equipo mb-0 py-1" data-id-equipo-1="'.$id_equipo_1.'">'.$nombre_1.'</p>';
+        $content .= '</div>';
+        $content .= '<div class="col-2 text-center bg-dark py-0 m-0">';
+        $content .= '<b>';
+        $content .= '<p id="" class="mb-0 py-1">VS</p>';
+        $content .= '</b>';
+        $content .= '</div>';
+        $content .= '<div class="col-5 text-center trapezoid-right bg-info py-0 my-0">';
+        $content .= '<p id="" class="resultado-equipo mb-0 py-1" data-id-equipo-2="'.$id_equipo_2.'">'.$nombre_2.'</p>';
+        $content .= '</div>';
+        $content .= '</div>';
+        $content .= '<div class="row justify-content-center">';
+        $content .= '<div class="col-12 text-center">';
+        $content .= '<p id="" class="py-0 my-0">'.$equipo_1_set_1.'-'.$equipo_2_set_1.' | '.$equipo_1_set_2.'-'.$equipo_2_set_2;
+        $content .= ($equipo_1_set_3 > 0 || $equipo_2_set_3 > 0) ? ' | '.$equipo_1_set_3.'-'.$equipo_2_set_3.'</p>' : '</p>';
+        $content .= '</div>';
+        $content .= '</div>';
+        $content .= '<div class="row justify-content-center">';
+        $content .= '<div class="col-12 text-center">';
+        $content .= '<p id="" class="py-0 my-0 text-warning">Jornada '.$jornada.'</p>';
+        $content .= '</div>';
+        $content .= '</div>';
+        $content .= '</div>';
+        $content .= '</div>';
 
     }
 
