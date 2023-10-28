@@ -18,6 +18,12 @@
         case 'terminar':
             terminar();
             break;
+        case 'eliminar':
+            eliminar();
+            break;
+        default:
+            echo "No existe la acción $accion";
+            break;
     }
 
     echo json_encode($data);
@@ -242,6 +248,25 @@
             $data['result'] = 'err: No se pudo localizar ID del enfrentamiento. Volver a intentar.';
         }
 
+
+        return $data;
+
+    }
+
+    function eliminar() {
+
+        global $data;
+        $cnx = $GLOBALS['cnx'];
+        $idEnfrentamiento = $_POST['idEnfrentamiento'];
+
+        $delEnfrentamiento = "DELETE FROM enfrentamiento WHERE id_enfrentamiento = $idEnfrentamiento";
+
+        if (!mysqli_query($cnx, $delEnfrentamiento)) {
+            $data['result'] = 'err: '.$cnx->error;
+            console.log(__LINE__.'::'.$cnx->error);
+        } else {
+            $data['result'] = 'ok';
+        }
 
         return $data;
 
