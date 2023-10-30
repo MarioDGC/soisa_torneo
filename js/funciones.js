@@ -81,6 +81,65 @@ $(document).ready(function () {
         });
     });
 
+
+    $(document).on("click", ".btn-eliminar-juego", function () {
+        // document.querySelector('#elemento').getAttribute('data-valor');
+        enfrentamiento = $(this).attr('data-enfrentamiento');
+        nombre_equipoIzq = $(this).attr('data-nomequipo1');
+        nombre_equipoDer = $(this).attr('data-nomequipo2');
+
+        // alert(enfrentamiento);
+        Swal.fire({
+            position: 'top',
+            icon: 'warning',
+            title: 'Eliminar partido',
+            text: '¿Seguro que deseas eliminar el enfrentamiento entre ' + nombre_equipoIzq + ' y ' + nombre_equipoDer + '?',
+            cancelButtonColor: '#6C757D',
+            cancelButtonText: 'Cancelar',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Sí, eliminar',
+        }).then((result) => {
+            if (result.value) {
+
+                $.ajax({
+                    type: 'post',
+                    url: 'controller/setEnfrentamiento.php',
+                    dataType: 'json',
+                    data: {
+                        accion: 'eliminar',
+                        idEnfrentamiento: enfrentamiento
+                    },
+                    success: function (data) {
+                        if (data.result == 'ok') {
+                            Swal.fire({
+                                position: 'top',
+                                type: 'success',
+                                title: 'Correcto',
+                                text: 'Juego eliminado correctamente',
+                                showConfirmButton: true,
+                            }).then(function () {
+                                location.reload();
+                            });
+                        } else {
+                            Swal.fire({
+                                position: 'top',
+                                type: 'error',
+                                title: 'Lo sentimos',
+                                text: 'No fue posible elimar el enfrentamiento. Intentar de nuevo',
+                                showConfirmButton: true,
+                            });
+                            console.error(data.result);
+                        }
+                    },
+                });
+
+            }
+        });
+
+    });
+
+
     $(document).on("click", "#idRolar", function () {
         let fecha = $('#fecha').val();
         let horario = $('#sHorario').val();
