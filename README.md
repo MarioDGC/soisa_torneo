@@ -16,3 +16,5 @@ otro github actions
 otro secrets
 otro secres uses
 otro secret key
+otro secret crear credenciales on
+

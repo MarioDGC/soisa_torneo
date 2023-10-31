@@ -23,10 +23,6 @@ jobs:
   steps:
 
    - name: hacer pull a local
-     uses: ./ 
-     with:
-          ssh_key: ${{secrets.SSH_KEY_HOSTGATOR}}
-
      run: | 
 
        ssh -i private.key -p2222 marioswe@mariosweb.com './actualizar_web.sh'
