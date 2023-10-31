@@ -23,6 +23,8 @@ jobs:
   steps:
 
    - name: hacer pull a local
+     with:
+          ssh_key: ${{secrets.SSH_KEY_HOSTGATOR}}
 
      run: | 
 
