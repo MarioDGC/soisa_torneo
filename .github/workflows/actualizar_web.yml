@@ -1,0 +1,29 @@
+name: Actualiza web con pull
+
+on:
+
+ push:
+
+  branches:
+
+   - main
+
+
+
+
+jobs:
+
+ update-local-repo:
+
+  runs-on: ubuntu-latest
+
+
+
+
+  steps:
+
+   - name: hacer pull a local
+
+     run: | 
+
+       ssh -p2222 marioswe@mariosweb.com './actualizar_web.sh'
