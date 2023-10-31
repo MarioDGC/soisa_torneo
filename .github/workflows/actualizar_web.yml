@@ -25,4 +25,4 @@ jobs:
    - name: hacer pull a local
      run: | 
 
-       ssh -p2222 marioswe@mariosweb.com './actualizar_web.sh'
+       ssh -o StrictHostKeyChecking=no -p 2222 marioswe@mariosweb.com './actualizar_web.sh'
