@@ -25,4 +25,4 @@ jobs:
    - name: hacer pull a local
      run: | 
 
-       ssh -i private.key -p2222 marioswe@mariosweb.com './actualizar_web.sh'
+       ssh -p2222 marioswe@mariosweb.com './actualizar_web.sh'
