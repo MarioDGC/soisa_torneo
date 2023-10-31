@@ -19,3 +19,4 @@ otro secret key
 otro secret crear credenciales on
 otro secret sin -i private.key
 otro workflows StrictKey
+otro actions desde remoto
