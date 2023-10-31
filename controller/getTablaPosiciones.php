@@ -79,7 +79,7 @@
     */
     $sqlCatA = "SELECT nombre, categoria, partidos_jugados, partidos_ganados, partidos_perdidos, puntos_favor, puntos_contra, (puntos_favor - puntos_contra) as dif_puntos, puntos
                 FROM equipo
-                ORDER BY partidos_ganados DESC, dif_puntos DESC";
+                ORDER BY partidos_ganados DESC, puntos DESC, dif_puntos DESC";
     $queryCatA = mysqli_query($cnx, $sqlCatA);
 
     $counter = 1;
