@@ -1,6 +1,7 @@
 # proyecto soisa
 includes/conexion.php
 test/
+cotroller/error_log
 
 # archivos
 *.log
