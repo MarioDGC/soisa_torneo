@@ -17,7 +17,7 @@
 
         $content .= '<option value="" disabled>- Categoría '.$cat.' -</option>';
 
-        while ($arrEquipos = mysqli_fetch_array($queryEquiposA)) {
+        while ($arrEquipos = mysqli_fetch_array($queryEquipos)) {
 
             $id_equipo = $arrEquipos['id_equipo'];
             $nombre = $arrEquipos['nombre'];
