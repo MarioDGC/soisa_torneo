@@ -6,7 +6,7 @@
     $data = [];
     $content = "";
 
-    $categorita = array('A', 'B', 'V');
+    $categoria = array('A', 'B', 'V');
 
     $content .= '<option value="">Seleccionar</option>';
 
