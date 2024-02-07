@@ -293,6 +293,8 @@ $(document).ready(function () {
                 $('#divFinalizar').removeClass('d-none');
             }
         }
+
+        registrar_puntos();
     });
 
 
@@ -391,6 +393,8 @@ $(document).ready(function () {
 
             }
         }
+
+        registrar_puntos();
     });
 
 
@@ -403,6 +407,8 @@ $(document).ready(function () {
             puntosEquipoIzq == 7 ? segundo_tiempo_set3 = false : null;
             puntosEquipoDer == 7 ? segundo_tiempo_set3 = false : null;
         }
+
+        registrar_puntos();
     });
 
 
