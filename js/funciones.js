@@ -303,25 +303,9 @@ $(document).ready(function () {
         if (set3) {
             puntosEquipoIzq == 7 ? segundo_tiempo_set3 = false : null;
             puntosEquipoDer == 7 ? segundo_tiempo_set3 = false : null;
-            $.ajax({
-                type: 'post',
-                url: 'controller/actualizarMarcador.php',
-                dataType: 'json',
-                data: {
-                    IdEnfrentamiento: idEnfrentamiento,
-                    Puntos: puntosEquipoIzq,
-                    IdEquipo: idEquipoIzq,
-                    SetNum: 'set3'
-                },
-                success: function (data) {
-                    if (data.status == 'ok') {
-                        console.log('registrado correctamente');
-                    } else if (data.status == 'err') {
-                        console.log('registrado correctamente');
-                    }
-                },
-            });
         }
+
+        registrar_puntos();
     });
 
 
@@ -840,6 +824,39 @@ $(document).ready(function () {
         const elements = document.querySelectorAll('#sumar_eq_izq, #restar_eq_izq, #sumar_eq_der, #restar_eq_der');
         elements.forEach(element => {
             element.classList.remove('d-none');
+        });
+    }
+
+    function registrar_puntos() {
+
+        let setNum
+
+        if (set1) {
+            setNum = 'set1';
+        } else if (set2) {
+            setNum = 'set2';
+        } else if (set3) {
+            setNum = 'set3';
+        }
+
+        $.ajax({
+            type: 'post',
+            url: 'controller/actualizarMarcador.php',
+            dataType: 'json',
+            data: {
+                accion: 'registrarPuntos',
+                IdEnfrentamiento: idEnfrentamiento,
+                Puntos: puntosEquipoIzq,
+                IdEquipo: idEquipoIzq,
+                SetNum: setNum
+            },
+            success: function (data) {
+                if (data.status == 'ok') {
+                    console.log('registrado correctamente');
+                } else if (data.status == 'err') {
+                    console.log('no se pudo registrar');
+                }
+            },
         });
     }
 
