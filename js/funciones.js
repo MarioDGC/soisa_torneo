@@ -219,6 +219,8 @@ $(document).ready(function () {
         $('#puntosEquipoIzq').text(puntosEquipoIzq);
 
         tiene_el_saqueIzq = document.querySelector('#saqueEquipoIzq').getAttribute('data-saqueequipoizq');
+        idEquipoIzq = document.querySelector('#idEquipoIzq').getAttribute('data-idequipoizq');
+        console.log(idEquipoIzq + '' + puntosEquipoDer);
 
         if (tiene_el_saqueIzq === "false") {
             document.querySelector('#saqueEquipoIzq').innerHTML = '<img src="assets/img/ball_1/favicon-16x16.png" height="16px" alt="balon"> ';
@@ -301,6 +303,21 @@ $(document).ready(function () {
         if (set3) {
             puntosEquipoIzq == 7 ? segundo_tiempo_set3 = false : null;
             puntosEquipoDer == 7 ? segundo_tiempo_set3 = false : null;
+            $.ajax({
+                type: 'post',
+                url: 'controller/actualizarMarcador.php',
+                dataType: 'json',
+                data: {
+                    Elemento: elemento,
+                },
+                success: function (data) {
+                    if (data.status == 'ok') {
+                        //
+                    } else if (data.status == 'err') {
+                        //
+                    }
+                },
+            });
         }
     });
 
@@ -310,6 +327,8 @@ $(document).ready(function () {
         $('#puntosEquipoDer').text(puntosEquipoDer);
 
         tiene_el_saqueDer = document.querySelector('#saqueEquipoDer').getAttribute('data-saqueequipoder');
+        idEquipoDer = document.querySelector('#idEquipoDer').getAttribute('data-idequipoder');
+        console.log(idEquipoDer + '' + puntosEquipoDer);
 
         if (tiene_el_saqueDer === "false") {
             document.querySelector('#saqueEquipoDer').innerHTML = '<img src="assets/img/ball_1/favicon-16x16.png" height="16px" alt="balon"> ';
@@ -649,6 +668,7 @@ $(document).ready(function () {
     $('#ir_al_set2').click(function () {
         // set2 va a iniciar
         set2 = true;
+        set1 = false;
         mostrar_btns_sumar_restar();
 
         $('#divSet2').addClass('d-none');
@@ -685,6 +705,7 @@ $(document).ready(function () {
     $('#ir_al_set3').click(function () {
         // set3 va a iniciar
         set3 = true;
+        set2 = false;
         sets_enfrentamiento = 3;
         mostrar_btns_sumar_restar();
 
