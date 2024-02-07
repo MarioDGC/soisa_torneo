@@ -308,13 +308,16 @@ $(document).ready(function () {
                 url: 'controller/actualizarMarcador.php',
                 dataType: 'json',
                 data: {
-                    Elemento: elemento,
+                    IdEnfrentamiento: idEnfrentamiento,
+                    Puntos: puntosEquipoIzq,
+                    IdEquipo: idEquipoIzq,
+                    SetNum: 'set3'
                 },
                 success: function (data) {
                     if (data.status == 'ok') {
-                        //
+                        console.log('registrado correctamente');
                     } else if (data.status == 'err') {
-                        //
+                        console.log('registrado correctamente');
                     }
                 },
             });
@@ -765,9 +768,6 @@ $(document).ready(function () {
             $('#resultSet3EquipoIzq').text(puntosEquipoIzq);
             $('#resultSet3EquipoDer').text(puntosEquipoDer);
         }
-
-
-        let idEnfrentamiento = document.querySelector('#idEnfrentamiento').getAttribute('data-idenfrentamiento');
 
         puntosTotalesEquipoIzq = Number($('#resultSet1EquipoIzq').text()) + Number($('#resultSet2EquipoIzq').text()) + Number($('#resultSet3EquipoIzq').text());
         puntosTotalesEquipoDer = Number($('#resultSet1EquipoDer').text()) + Number($('#resultSet2EquipoDer').text()) + Number($('#resultSet3EquipoDer').text());
