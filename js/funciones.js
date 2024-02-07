@@ -220,7 +220,7 @@ $(document).ready(function () {
 
         tiene_el_saqueIzq = document.querySelector('#saqueEquipoIzq').getAttribute('data-saqueequipoizq');
         idEquipoIzq = document.querySelector('#idEquipoIzq').getAttribute('data-idequipoizq');
-        console.log(idEquipoIzq + ' - ' + puntosEquipoDer);
+        console.log(idEquipoIzq + ' - ' + puntosEquipoIzq);
 
         if (tiene_el_saqueIzq === "false") {
             document.querySelector('#saqueEquipoIzq').innerHTML = '<img src="assets/img/ball_1/favicon-16x16.png" height="16px" alt="balon"> ';
