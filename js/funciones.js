@@ -835,7 +835,8 @@ $(document).ready(function () {
 
     function registrar_puntos() {
 
-        let setNum
+        let setNum;
+        console.log('entro');
 
         if (set1) {
             setNum = 'set1';
