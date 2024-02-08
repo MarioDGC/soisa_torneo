@@ -847,7 +847,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: 'post',
-            url: 'controller/actualizarMarcador.php',
+            url: 'controller/setEnfrentamiento.php',
             dataType: 'json',
             data: {
                 accion: 'registrarPuntos',
