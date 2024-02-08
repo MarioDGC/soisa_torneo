@@ -294,7 +294,7 @@ $(document).ready(function () {
             }
         }
 
-        registrar_puntos();
+        registrar_puntos(puntosEquipoIzq, idEquipoIzq);
     });
 
 
@@ -307,7 +307,7 @@ $(document).ready(function () {
             puntosEquipoDer == 7 ? segundo_tiempo_set3 = false : null;
         }
 
-        registrar_puntos();
+        registrar_puntos(puntosEquipoIzq, idEquipoIzq);
     });
 
 
@@ -394,7 +394,7 @@ $(document).ready(function () {
             }
         }
 
-        registrar_puntos();
+        registrar_puntos(puntosEquipoDer, idEquipoDer);
     });
 
 
@@ -408,7 +408,7 @@ $(document).ready(function () {
             puntosEquipoDer == 7 ? segundo_tiempo_set3 = false : null;
         }
 
-        registrar_puntos();
+        registrar_puntos(puntosEquipoDer, idEquipoDer);
     });
 
 
@@ -833,10 +833,10 @@ $(document).ready(function () {
         });
     }
 
-    function registrar_puntos() {
+    function registrar_puntos(puntos, idEquipo) {
 
         let setNum;
-        console.log('entro');
+        console.log('entro - ' + enfrentamiento + ' - ' + puntos + ' - ' + idEquipo);
 
         if (set1) {
             setNum = 'set1';
@@ -846,25 +846,25 @@ $(document).ready(function () {
             setNum = 'set3';
         }
 
-        $.ajax({
-            type: 'post',
-            url: 'controller/setEnfrentamiento.php',
-            dataType: 'json',
-            data: {
-                accion: 'registrarPuntos',
-                IdEnfrentamiento: idEnfrentamiento,
-                Puntos: puntosEquipoIzq,
-                IdEquipo: idEquipoIzq,
-                SetNum: setNum
-            },
-            success: function (data) {
-                if (data.status == 'ok') {
-                    console.log('registrado correctamente');
-                } else if (data.status == 'err') {
-                    console.log('no se pudo registrar');
-                }
-            },
-        });
+        // $.ajax({
+        //     type: 'post',
+        //     url: 'controller/setEnfrentamiento.php',
+        //     dataType: 'json',
+        //     data: {
+        //         accion: 'registrarPuntos',
+        //         IdEnfrentamiento: idEnfrentamiento,
+        //         Puntos: puntos,
+        //         IdEquipo: idEquipo,
+        //         SetNum: setNum
+        //     },
+        //     success: function (data) {
+        //         if (data.status == 'ok') {
+        //             console.log('registrado correctamente');
+        //         } else if (data.status == 'err') {
+        //             console.log('no se pudo registrar');
+        //         }
+        //     },
+        // });
     }
 
 });
