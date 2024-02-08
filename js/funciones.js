@@ -294,6 +294,7 @@ $(document).ready(function () {
             }
         }
 
+        console.log(puntosEquipoIzq + ' - ' + idEquipoIzq);
         registrar_puntos(puntosEquipoIzq, idEquipoIzq);
     });
 
