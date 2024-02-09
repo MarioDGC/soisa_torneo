@@ -310,15 +310,15 @@
 
             $updPuntos = "UPDATE enfrentamiento SET $columna = $puntos WHERE id_enfrentamiento = $idEnfrentamiento";
 
-            if (!mysqli_query($escritura, $updPuntos)  ) {
+            if (!mysqli_query($cnx, $updPuntos)  ) {
                 $result_transaccion = false;
                 $data['result'] = 'err: '.$cnx->error;
-                console.log('error en query: '+$updPuntos+' → '.$cnx->error);
+                echo 'error en query: '+$updPuntos+' → '.$cnx->error;
             }
 
             if ($result_transaccion) {
                 mysqli_commit($cnx);
-                console.log('éxito, marcador registrado');
+                echo 'éxito, marcador registrado';
             } else {
                 $cnx->rollback();
             }

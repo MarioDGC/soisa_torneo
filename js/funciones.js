@@ -28,11 +28,7 @@ $(document).ready(function () {
             url: 'controller/getTablaPosiciones.php',
             dataType: 'json',
             success: function (data) {
-                // if (data.status == 'ok') {
                 $('#CatA').html(data.contentCatA);
-                // } else if (data.status == 'err') {
-                //     alert('Error al obtener la tabla de posiciones');
-                // }
             },
         });
 
@@ -41,7 +37,6 @@ $(document).ready(function () {
             url: 'controller/getResultadoEnfrentamiento.php',
             dataType: 'json',
             success: function (data) {
-                // if (data.status == 'ok') {
                 $('#idResultados').append(data.content);
             },
         });
@@ -211,6 +206,119 @@ $(document).ready(function () {
         document.querySelector('#idEquipoIzq').setAttribute('data-idequipoizq', idEquipoIzq);
         document.querySelector('#idEquipoDer').setAttribute('data-idequipoder', idEquipoDer);
 
+        // ajax para obtener el resultado del partido en curso
+        // saber en qué número de sets van para saber cuáles botónes mostrar y setear los sets en true o false
+        // puntosEquipoIzq_set1
+        // puntosEquipoDer_set1
+        // puntosEquipoIzq_set2
+        // puntosEquipoDer_set2
+        // puntosEquipoIzq_set3
+        // puntosEquipoDer_set3
+        // sets_jugados
+        $.ajax({
+            type: 'post',
+            url: 'controller/getMarcadorJuego.php',
+            dataType: 'json',
+            data: {
+                IdEnfrentamiento: idEnfrentamiento,
+                IdEquipoIzq: idEquipoIzq,
+                IdEquipoDer: idEquipoDer
+            },
+            success: function (data) {
+                if (data.status == 'ok') {
+
+                    sets_ganadoIzq = 0;
+                    sets_ganadoDer = 0;
+
+                    // if (+data.puntosEquipoIzq_set3 > +data.puntosEquipoDer_set3) sets_ganadoIzq++;
+                    // if (+data.puntosEquipoIzq_set3 < +data.puntosEquipoDer_set3) sets_ganadoDer++;
+                    console.log(data.sets_jugados);
+                    console.log(idEnfrentamiento);
+
+                    if (data.sets_jugados == 3) {
+                        set1 = false;
+                        set2 = false;
+                        set3 = true;
+
+                        if (+data.puntosEquipoIzq_set1 > +data.puntosEquipoDer_set1) sets_ganadoIzq++;
+                        if (+data.puntosEquipoIzq_set1 < +data.puntosEquipoDer_set1) sets_ganadoDer++;
+                        if (+data.puntosEquipoIzq_set2 > +data.puntosEquipoDer_set2) sets_ganadoIzq++;
+                        if (+data.puntosEquipoIzq_set2 < +data.puntosEquipoDer_set2) sets_ganadoDer++;
+
+                        puntosEquipoIzq = +data.puntosEquipoIzq_set3;
+                        $('#puntosEquipoIzq').text(data.puntosEquipoIzq_set3);
+                        puntosEquipoDer = +data.puntosEquipoDer_set3;
+                        $('#puntosEquipoDer').text(data.puntosEquipoDer_set3);
+
+                        $('#resultSet1EquipoIzq').text(data.puntosEquipoIzq_set1);
+                        $('#resultSet1EquipoDer').text(data.puntosEquipoDer_set1);
+
+                        $('#resultSet2EquipoIzq').text(data.puntosEquipoIzq_set2);
+                        $('#resultSet2EquipoDer').text(data.puntosEquipoDer_set2);
+
+                        $('#setGanadoIzq').text(sets_ganadoIzq);
+                        $('#setGanadoDer').text(sets_ganadoDer);
+
+                        if ((puntosEquipoIzq >= 15 && puntosEquipoIzq - puntosEquipoDer >= 2) || (puntosEquipoDer >= 15 && puntosEquipoDer - puntosEquipoIzq >= 2)) {
+                            $('#divFinalizar').removeClass('d-none');
+                            ocultar_btns_sumar_restar();
+                        }
+
+                    } else if (data.sets_jugados == 2) {
+                        set1 = false;
+                        set2 = true;
+
+                        if (+data.puntosEquipoIzq_set1 > +data.puntosEquipoDer_set1) sets_ganadoIzq++;
+                        if (+data.puntosEquipoIzq_set1 < +data.puntosEquipoDer_set1) sets_ganadoDer++;
+
+                        puntosEquipoIzq = +data.puntosEquipoIzq_set2;
+                        $('#puntosEquipoIzq').text(data.puntosEquipoIzq_set2);
+                        puntosEquipoDer = +data.puntosEquipoDer_set2;
+                        $('#puntosEquipoDer').text(data.puntosEquipoDer_set2);
+
+                        $('#resultSet1EquipoIzq').text(data.puntosEquipoIzq_set1);
+                        $('#resultSet1EquipoDer').text(data.puntosEquipoDer_set1);
+
+                        $('#setGanadoIzq').text(sets_ganadoIzq);
+                        $('#setGanadoDer').text(sets_ganadoDer);
+
+                        if ((puntosEquipoIzq >= 25 && puntosEquipoIzq - puntosEquipoDer >= 2) || (puntosEquipoDer >= 25 && puntosEquipoDer - puntosEquipoIzq >= 2)) {
+                            if (sets_ganadoIzq == 1 && sets_ganadoDer == 1) {
+                                $('#divIrSet3').removeClass('d-none');
+                                ocultar_btns_sumar_restar();
+                            } else {
+                                $('#divFinalizar').removeClass('d-none');
+                                ocultar_btns_sumar_restar();
+                            }
+                        }
+
+                    } else {
+
+                        puntosEquipoIzq = +data.puntosEquipoIzq_set1;
+                        $('#puntosEquipoIzq').text(data.puntosEquipoIzq_set1);
+                        puntosEquipoDer = +data.puntosEquipoDer_set1;
+                        $('#puntosEquipoDer').text(data.puntosEquipoDer_set1);
+
+                        $('#setGanadoIzq').text(sets_ganadoIzq);
+                        $('#setGanadoDer').text(sets_ganadoDer);
+
+                        if ((puntosEquipoIzq >= 25 && puntosEquipoIzq - puntosEquipoDer >= 2) || (puntosEquipoDer >= 25 && puntosEquipoDer - puntosEquipoIzq >= 2)) {
+                            $('#divSet2').removeClass('d-none');
+                            ocultar_btns_sumar_restar();
+                        }
+                    }
+
+
+
+
+
+                    //
+                } else if (data.status == 'err') {
+                    //
+                }
+            },
+        });
+
     }
 
 
@@ -220,7 +328,9 @@ $(document).ready(function () {
 
         tiene_el_saqueIzq = document.querySelector('#saqueEquipoIzq').getAttribute('data-saqueequipoizq');
         idEquipoIzq = document.querySelector('#idEquipoIzq').getAttribute('data-idequipoizq');
-        console.log(idEquipoIzq + ' - ' + puntosEquipoIzq);
+
+        console.log('puntos: ' + puntosEquipoIzq + ' - id:eq' + idEquipoIzq);
+        registrar_puntos(puntosEquipoIzq, idEquipoIzq);
 
         if (tiene_el_saqueIzq === "false") {
             document.querySelector('#saqueEquipoIzq').innerHTML = '<img src="assets/img/ball_1/favicon-16x16.png" height="16px" alt="balon"> ';
@@ -294,8 +404,6 @@ $(document).ready(function () {
             }
         }
 
-        console.log(puntosEquipoIzq + ' - ' + idEquipoIzq);
-        registrar_puntos(puntosEquipoIzq, idEquipoIzq);
     });
 
 
@@ -303,12 +411,14 @@ $(document).ready(function () {
         puntosEquipoIzq = puntosEquipoIzq - 1;
         $('#puntosEquipoIzq').text(puntosEquipoIzq);
 
+        console.log('puntos: ' + puntosEquipoIzq + ' - id:eq' + idEquipoIzq);
+        registrar_puntos(puntosEquipoIzq, idEquipoIzq);
+
         if (set3) {
             puntosEquipoIzq == 7 ? segundo_tiempo_set3 = false : null;
             puntosEquipoDer == 7 ? segundo_tiempo_set3 = false : null;
         }
 
-        registrar_puntos(puntosEquipoIzq, idEquipoIzq);
     });
 
 
@@ -318,7 +428,9 @@ $(document).ready(function () {
 
         tiene_el_saqueDer = document.querySelector('#saqueEquipoDer').getAttribute('data-saqueequipoder');
         idEquipoDer = document.querySelector('#idEquipoDer').getAttribute('data-idequipoder');
-        console.log(idEquipoDer + ' - ' + puntosEquipoDer);
+
+        console.log('puntos: ' + puntosEquipoDer + ' - id:eq' + idEquipoDer);
+        registrar_puntos(puntosEquipoDer, idEquipoDer);
 
         if (tiene_el_saqueDer === "false") {
             document.querySelector('#saqueEquipoDer').innerHTML = '<img src="assets/img/ball_1/favicon-16x16.png" height="16px" alt="balon"> ';
@@ -395,21 +507,21 @@ $(document).ready(function () {
             }
         }
 
-        registrar_puntos(puntosEquipoDer, idEquipoDer);
     });
-
 
 
     $('#restar_eq_der').click(function () {
         puntosEquipoDer = puntosEquipoDer - 1;
         $('#puntosEquipoDer').text(puntosEquipoDer);
 
+        console.log('puntos: ' + puntosEquipoDer + ' - id:eq' + idEquipoDer);
+        registrar_puntos(puntosEquipoDer, idEquipoDer);
+
         if (set3) {
             puntosEquipoIzq == 7 ? segundo_tiempo_set3 = false : null;
             puntosEquipoDer == 7 ? segundo_tiempo_set3 = false : null;
         }
 
-        registrar_puntos(puntosEquipoDer, idEquipoDer);
     });
 
 
@@ -837,7 +949,6 @@ $(document).ready(function () {
     function registrar_puntos(puntos, idEquipo) {
 
         let setNum;
-        console.log('entro - ' + enfrentamiento + ' - ' + puntos + ' - ' + idEquipo);
 
         if (set1) {
             setNum = 'set1';
@@ -847,25 +958,25 @@ $(document).ready(function () {
             setNum = 'set3';
         }
 
-        // $.ajax({
-        //     type: 'post',
-        //     url: 'controller/setEnfrentamiento.php',
-        //     dataType: 'json',
-        //     data: {
-        //         accion: 'registrarPuntos',
-        //         IdEnfrentamiento: idEnfrentamiento,
-        //         Puntos: puntos,
-        //         IdEquipo: idEquipo,
-        //         SetNum: setNum
-        //     },
-        //     success: function (data) {
-        //         if (data.status == 'ok') {
-        //             console.log('registrado correctamente');
-        //         } else if (data.status == 'err') {
-        //             console.log('no se pudo registrar');
-        //         }
-        //     },
-        // });
+        $.ajax({
+            type: 'post',
+            url: 'controller/setEnfrentamiento.php',
+            dataType: 'json',
+            data: {
+                accion: 'registrarPuntos',
+                IdEnfrentamiento: idEnfrentamiento,
+                Puntos: puntos,
+                IdEquipo: idEquipo,
+                SetNum: setNum
+            },
+            success: function (data) {
+                if (data.status == 'ok') {
+                    console.log('registrado correctamente');
+                } else if (data.status == 'err') {
+                    console.log('no se pudo registrar');
+                }
+            },
+        });
     }
 
 });
