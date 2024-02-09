@@ -232,8 +232,6 @@ $(document).ready(function () {
 
                     // if (+data.puntosEquipoIzq_set3 > +data.puntosEquipoDer_set3) sets_ganadoIzq++;
                     // if (+data.puntosEquipoIzq_set3 < +data.puntosEquipoDer_set3) sets_ganadoDer++;
-                    console.log(data.sets_jugados);
-                    console.log(idEnfrentamiento);
 
                     if (data.sets_jugados == 3) {
                         set1 = false;
