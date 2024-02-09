@@ -329,7 +329,6 @@ $(document).ready(function () {
         tiene_el_saqueIzq = document.querySelector('#saqueEquipoIzq').getAttribute('data-saqueequipoizq');
         idEquipoIzq = document.querySelector('#idEquipoIzq').getAttribute('data-idequipoizq');
 
-        console.log('puntos: ' + puntosEquipoIzq + ' - id:eq' + idEquipoIzq);
         registrar_puntos(puntosEquipoIzq, idEquipoIzq);
 
         if (tiene_el_saqueIzq === "false") {
@@ -410,8 +409,6 @@ $(document).ready(function () {
     $('#restar_eq_izq').click(function () {
         puntosEquipoIzq = puntosEquipoIzq - 1;
         $('#puntosEquipoIzq').text(puntosEquipoIzq);
-
-        console.log('puntos: ' + puntosEquipoIzq + ' - id:eq' + idEquipoIzq);
         registrar_puntos(puntosEquipoIzq, idEquipoIzq);
 
         if (set3) {
@@ -429,7 +426,6 @@ $(document).ready(function () {
         tiene_el_saqueDer = document.querySelector('#saqueEquipoDer').getAttribute('data-saqueequipoder');
         idEquipoDer = document.querySelector('#idEquipoDer').getAttribute('data-idequipoder');
 
-        console.log('puntos: ' + puntosEquipoDer + ' - id:eq' + idEquipoDer);
         registrar_puntos(puntosEquipoDer, idEquipoDer);
 
         if (tiene_el_saqueDer === "false") {
@@ -514,7 +510,6 @@ $(document).ready(function () {
         puntosEquipoDer = puntosEquipoDer - 1;
         $('#puntosEquipoDer').text(puntosEquipoDer);
 
-        console.log('puntos: ' + puntosEquipoDer + ' - id:eq' + idEquipoDer);
         registrar_puntos(puntosEquipoDer, idEquipoDer);
 
         if (set3) {
