@@ -306,10 +306,6 @@ $(document).ready(function () {
                         }
                     }
 
-
-
-
-
                     //
                 } else if (data.status == 'err') {
                     //
