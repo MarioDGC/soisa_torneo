@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+     <style>
+        input, textarea { display: block; margin-bottom: 1em; }
+        label { font-weight: bold; display: block; }
+    </style>
+
 </head>
 <body>
 
-    <style>
-        input, textarea { display: block; margin-bottom: 1em; }
-        label { font-weight: bold; display: block; }
-        </style>
-        <h1>Fixtures Generator</h1>
-        <p>This page is part of <a
-        href="http://bluebones.net/2005/05/league-fixtures-generator/">bluebones.net</a>.</p>
+
+    <h1>Fixtures Generator</h1>
+    <p>This page is part of <a href="http://bluebones.net/2005/05/league-fixtures-generator/">bluebones.net</a>.</p>
 
 
     <?php
