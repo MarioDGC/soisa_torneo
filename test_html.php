@@ -6,19 +6,15 @@ include ('funciones.php');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <script src="js/jquery-3.7.1.min.js"></script>
 
-    <link rel="stylesheet" href="/sistemas/control_mp/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/js/datatables_bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <!-- Para poder utilizar JQUERY -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-    <!-- Para poder utilizar modal (tambien necesita script de jquery-3.4.1.min.js)-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="/js/datatables_bootstrap4.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css?v=<?php echo time();?>">
 
     <title>Test</title>
 
@@ -89,6 +85,11 @@ include ('funciones.php');
         </div>
     </div>
 
+    <script type="text/javascript" src="js/funciones.js?v=<?php echo rand();?>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 </html>
