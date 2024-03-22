@@ -18,76 +18,104 @@ include ('funciones.php');
 
     <title>Test</title>
 
+    <style>
+
+        body {
+            background-image: linear-gradient(rgba(255,255,255, 0.75), rgba(255,255,255, 0.75)), url('https://marketplace.canva.com/EAFKmk8ad1Q/1/0/900w/canva-beige-and-green-aesthetic-boho-watercolor-leaves-phone-wallpaper-qmYKeK8cth8.jpg');
+            background-repeat: no-repeat;
+            /* deja fijo el fondo */
+            background-attachment: fixed;
+            /* posiciona la imagen al centro de la ventana */
+            background-position: center center;
+            /* ocupa toda la ventana */
+            background-size: cover;
+            /* Asegura que el body ocupe al menos todo el alto de la ventana del navegador */
+            min-height: 100vh;
+            /* Establece el margen a 0 para eliminar los espacios por defecto alrededor del borde de la página */
+            margin: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant SC', serif;
+        }
+
+
+        .h1, .h2, .h3, .h4, .h5, .h6 {
+            font-family: 'Cormorant SC', serif;
+        }
+
+        .tachado {
+            text-decoration: line-through;
+        }
+
+        .info-rifa {
+            background-color: rgba(255, 234, 201, 0.85);
+        }
+    </style>
+
 </head>
 
 <body>
 
-    <div class="col-11">
-        <div class="row justify-content-around align-items-center mb-3 mt-5">
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>00</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>01</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>02</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>03</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>04</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>05</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>06</span></div>
+    <div class="container">
+
+        <div class="row h1 justify-content-center mt-5">
+            <div class="col-12 text-center">
+                <p>RIFA DE JOYERÍA NICE</p>
+            </div>
         </div>
-        <div class="row justify-content-around align-items-center mb-3">
-            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>07</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>08</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>09</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>10</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>11</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>12</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>13</span></div>
+
+        <div class="row justify-content-center mt-2">
+            <div class="col-8 text-center">
+                <img src="img/img_123.webp" class="img-fluid rounded" alt="Conjunto de joyería">
+            </div>
         </div>
-        <div class="row justify-content-around align-items-center mb-3">
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>14</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>15</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>16</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>17</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>18</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>19</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>20</span></div>
+
+        <!-- <div class="row justify-content-center rounded-pill info-rifa mt-4">
+            <div class="col-auto text-center">
+                <p class="py-0 my-2">4 BAÑOS DE ORO 18 KIL</p>
+            </div>
+        </div> -->
+
+        <div class="row justify-content-center rounded-pill info-rifa mt-4">
+            <div class="col-8 text-center">
+                <p class="py-0 my-2">4 BAÑOS DE ORO 18 KIL</p>
+            </div>
         </div>
-        <div class="row justify-content-around align-items-center mb-3">
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>00</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>01</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>02</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>03</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
-        </div>
-        <div class="row justify-content-around align-items-center mb-3">
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>00</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>01</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>02</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>03</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
-        </div>
-        <div class="row justify-content-around align-items-center mb-3">
-            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>00</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>01</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>02</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>03</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
-        </div>
-        <div class="row justify-content-around align-items-center mb-3">
-            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>00</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>01</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>02</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>03</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>04</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>04</span></div>
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
-        </div>
-        <div class="row justify-content-around align-items-center mb-3">
-            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>01</span></div>
+
+        <div class="row justify-content-center">
+            <div class="col-11">
+
+            <?php
+
+                $cont = 0;
+
+                for ($i=0; $i < 10; $i++) {
+
+                    if ($i == 0){
+                        echo "<div class='row justify-content-around align-items-center mb-3 mt-5'>";
+                    } else if ($i == 9) {
+                        echo "<div class='row justify-content-around align-items-center mb-3 mb-5'>";
+                    } else {
+                        echo "<div class='row justify-content-around align-items-center mb-3'>";
+                    }
+
+                    for ($j=0; $j <5 ; $j++) {
+                        if ($cont % 3 == 0) {
+                            $used_number = "tachado text-danger";
+                        } else {
+                            $used_number = "";
+                        }
+
+                        echo "<div class='col-auto border $used_number border-dark rounded text-center py-1'><span>".str_pad($cont, 2, "0", STR_PAD_LEFT)."</span></div>";
+                        $cont++;
+                    }
+                    # code...
+                    echo "</div>";
+
+                }
+            ?>
+
         </div>
     </div>
 
