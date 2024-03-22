@@ -22,82 +22,72 @@ include ('funciones.php');
 
 <body>
 
-    <div class="container justify-content-center">
-        <div class="row justify-content-center align-items-center mt-5">
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>00</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>01</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>02</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>03</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>04</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>05</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>06</span></div>
+    <div class="col-11">
+        <div class="row justify-content-around align-items-center mb-3 mt-5">
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>00</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>01</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>02</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>03</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>04</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>05</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>06</span></div>
         </div>
-        <div class="row justify-content-center align-items-center">
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>07</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>08</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>09</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>10</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>11</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>12</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>13</span></div>
+        <div class="row justify-content-around align-items-center mb-3">
+            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>07</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>08</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>09</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>10</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>11</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>12</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>13</span></div>
         </div>
-        <div class="row justify-content-center align-items-center">
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>14</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>15</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>16</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>17</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>18</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>19</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>20</span></div>
+        <div class="row justify-content-around align-items-center mb-3">
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>14</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>15</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>16</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>17</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>18</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>19</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>20</span></div>
         </div>
-        <div class="row justify-content-center align-items-center">
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>00</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>01</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>02</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>03</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>04</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>04</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>04</span></div>
+        <div class="row justify-content-around align-items-center mb-3">
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>00</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>01</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>02</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>03</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
         </div>
-        <div class="row justify-content-center align-items-center">
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>00</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>01</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>02</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>03</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>04</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>04</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>04</span></div>
+        <div class="row justify-content-around align-items-center mb-3">
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>00</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>01</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>02</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>03</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
         </div>
-        <div class="row justify-content-center align-items-center">
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>00</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>01</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>02</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>03</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>04</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>04</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>04</span></div>
+        <div class="row justify-content-around align-items-center mb-3">
+            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>00</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>01</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>02</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>03</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
         </div>
-        <div class="row justify-content-center align-items-center">
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>00</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>01</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>02</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>03</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>04</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>04</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>04</span></div>
+        <div class="row justify-content-around align-items-center mb-3">
+            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>00</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>01</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>02</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>03</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>04</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1 bg-warning"><span>04</span></div>
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>04</span></div>
         </div>
-        <div class="row justify-content-center align-items-center">
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>00</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>01</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>02</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>03</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>04</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>04</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>04</span></div>
-        </div>
-        <div class="row justify-content-center align-items-center">
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>00</span></div>
-            <div class="col-1 border border-dark text-center px-2 py-2"><span>01</span></div>
+        <div class="row justify-content-around align-items-center mb-3">
+            <div class="col-1 border border-dark rounded text-center px-0 py-1"><span>01</span></div>
         </div>
     </div>
 
